@@ -1,0 +1,59 @@
+/* Цветовая схема Балаково */
+
+/* Общие стили */
+body {
+    background-color: #007ACC; /* лазурь основной фон */
+    color: #FFFFFF; /* белый текст */
+}
+
+/* Хедер */
+.header {
+    background-color: #005A9C; /* темно-синий фон */
+}
+
+.logo {
+    color: #FFD700; /* золотой цвет */
+}
+
+/* Навигация */
+.nav__list li a {
+    color: #FFFFFF; /* белый текст */
+}
+
+.nav__list li a:hover {
+    color: #A3D5FF; /* светло-голубой hover */
+}
+
+/* Герой секция */
+.hero::after {
+    background-color: rgba(0, 122, 204, 0.6); /* лазурь с прозрачностью */
+}
+
+/* Кнопка */
+.btn-primary {
+    background-color: #FFD700; /* золотой */
+    color: #005A9C; /* темно-синий текст */
+}
+
+.btn-primary:hover {
+    background-color: #FFC107; /* светло-золотой */
+}
+
+/* Информационные карточки */
+.card {
+    background-color: #FFFFFF; /* белый фон */
+    color: #2c3e50; /* темно-серый текст */
+}
+
+.card__title {
+    color: #005A9C; /* темно-синий */
+}
+
+/* Футер */
+.footer {
+    background-color: #005A9C; /* темно-синий */
+}
+
+.social-links a:hover {
+    color: #A3D5FF; /* светло-голубой */
+}

@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Город Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#">О городе</a></li>
+                    <li><a href="#">Переезд в Балаково</a></li>
+                    <li><a href="#">Образование</a></li>
+                    <li><a href="#">Бизнес</a></li>
+                    <li><a href="#">Ещё ▾</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <main>
+        <section class="hero">
+            <!-- Swiper -->
+            <div class="swiper hero-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="container hero__container">
+                            <h1 class="hero__title">Балаково — где энергия встречает Волгу</h1>
+                            <p class="hero__subtitle">Добро пожаловать в Балаково — город возможностей и развития</p>
+                            <a href="#" class="btn btn-primary">Узнать больше</a>
+                        </div>
+                    </div>
+                    <!-- Можно добавить другие слайды здесь -->
+                </div>
+                <!-- Навигация -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Пагинация -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+        <section class="info-cards container">
+            <div class="card">
+                <img src="icons/location.svg" alt="Как добраться" class="card__icon" />
+                <h3 class="card__title">Как добраться?</h3>
+                <p class="card__text">Информация о транспорте и маршрутах</p>
+            </div>
+            <div class="card">
+                <img src="icons/bus.svg" alt="Расписание автобусов" class="card__icon" />
+                <h3 class="card__title">Расписание автобусов</h3>
+                <p class="card__text">Актуальное расписание городского транспорта</p>
+            </div>
+            <div class="card">
+                <img src="icons/move.svg" alt="Как переехать" class="card__icon" />
+                <h3 class="card__title">Как переехать?</h3>
+                <p class="card__text">Пошаговая инструкция для новых жителей</p>
+            </div>
+            <div class="card">
+                <img src="icons/doctor.svg" alt="Записаться к врачу" class="card__icon" />
+                <h3 class="card__title">Записаться к врачу</h3>
+                <p class="card__text">Онлайн-запись в медицинские учреждения</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2024 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Instagram">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
