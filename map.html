@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Карта Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--map">
+            <div class="container page-hero__content page-hero__content--split">
+                <div class="page-hero__text">
+                    <span class="page-hero__eyebrow">Навигация по городу</span>
+                    <h1 class="page-hero__title">Карта Балаково — ориентируйтесь легко</h1>
+                    <p class="page-hero__subtitle">Маршруты, инфраструктура и интересные места — отметили всё на одной карте, чтобы планировать прогулки и поездки по городу.</p>
+                    <div class="page-hero__cta-group">
+                        <a href="places.html" class="btn btn-primary page-hero__btn">Интересные места</a>
+                        <a href="infrastructure.html" class="page-hero__link">Службы и инфраструктура</a>
+                    </div>
+                </div>
+                <div class="page-hero__highlights">
+                    <div class="page-hero__highlight-card">
+                        <h3>12+</h3>
+                        <p>подборок локаций, отмеченных на карте для гостей и жителей Балаково.</p>
+                    </div>
+                    <div class="page-hero__highlight-card">
+                        <h3>24/7</h3>
+                        <p>оперативные службы и полезные объекты всегда под рукой.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Онлайн-карта</span>
+                    <h2 class="section-header__title">Исследуйте Балаково</h2>
+                    <p class="section-header__subtitle">Масштабируйте районы, включайте спутник и проложите маршрут до нужной точки.</p>
+                </div>
+                <div class="city-map__wrapper">
+                    <iframe
+                        class="city-map__iframe"
+                        src="https://yandex.ru/map-widget/v1/?ll=47.560975%2C52.026816&z=12"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Карта Балаково"
+                    ></iframe>
+                </div>
+                <div class="map-highlights">
+                    <article class="map-highlights__item">
+                        <h3>Маршруты и достопримечательности</h3>
+                        <p>Набережные, музеи, веломаршруты и арт-пространства — ориентируйтесь по нашему путеводителю.</p>
+                    </article>
+                    <article class="map-highlights__item">
+                        <h3>Инфраструктура и сервисы</h3>
+                        <p>На карте отмечены больницы, МФЦ, пожарные части и другие точки быстрого реагирования.</p>
+                    </article>
+                    <article class="map-highlights__item">
+                        <h3>Природные зоны</h3>
+                        <p>Лесопарки, экотропы и базы отдыха, где можно провести выходные на природе.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

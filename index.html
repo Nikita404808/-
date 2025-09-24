@@ -16,15 +16,29 @@
     <header class="header">
         <div class="container header__container">
             <div class="logo">
-                <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
             </div>
             <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <ul class="nav__list">
-                    <li><a href="#">О городе</a></li>
-                    <li><a href="#">Переезд в Балаково</a></li>
-                    <li><a href="#">Образование</a></li>
-                    <li><a href="#">Бизнес</a></li>
-                    <li><a href="#">Ещё ▾</a></li>
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -35,15 +49,21 @@
             <!-- Swiper -->
             <div class="swiper hero-swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide hero-slide">
+                        <img src="img/1699978_original.jpg" alt="Панорама Балаково" class="hero-slide__image" loading="lazy" />
                         <div class="container hero__container">
                             <h1 class="hero__title">Балаково — где энергия встречает Волгу</h1>
                             <p class="hero__subtitle">Добро пожаловать в Балаково — город возможностей и развития</p>
                             <a href="#" class="btn btn-primary">Узнать больше</a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <!-- Пустой слайд -->
+                    <div class="swiper-slide hero-slide">
+                        <img src="img/загруженное.jpeg" alt="Врач в коридоре клиники" class="hero-slide__image" loading="lazy" />
+                        <div class="container hero__container">
+                            <h2 class="hero__title">Около 2 тысяч заболевших в Балаково</h2>
+                            <p class="hero__subtitle">В России поговаривают об объявлении нового локдауна</p>
+                            <a href="#" class="btn btn-primary">Узнать больше</a>
+                        </div>
                     </div>
                     <!-- Можно добавить другие слайды здесь -->
                 </div>
@@ -53,37 +73,83 @@
                 <!-- Пагинация -->
                 <div class="swiper-pagination"></div>
             </div>
-
+        </section>
         <section class="info-cards container">
             <div class="card">
-                <img src="icons/location.svg" alt="Как добраться" class="card__icon" />
-                <h3 class="card__title">Как добраться?</h3>
-                <p class="card__text">Информация о транспорте и маршрутах</p>
+                <img src="img/icons/walk.svg" alt="Где погулять" class="card__icon" />
+                <h3 class="card__title">Где погулять?</h3>
+                <p class="card__text">Маршруты по набережной, паркам и зеленым зонам Балаково для прогулок на выходных.</p>
             </div>
             <div class="card">
-                <img src="icons/bus.svg" alt="Расписание автобусов" class="card__icon" />
+                <img src="img/icons/bus.svg" alt="Расписание автобусов" class="card__icon" />
                 <h3 class="card__title">Расписание автобусов</h3>
                 <p class="card__text">Актуальное расписание городского транспорта</p>
             </div>
             <div class="card">
-                <img src="icons/move.svg" alt="Как переехать" class="card__icon" />
-                <h3 class="card__title">Как переехать?</h3>
-                <p class="card__text">Пошаговая инструкция для новых жителей</p>
+                <img src="img/icons/weather.svg" alt="Погода на завтра" class="card__icon" />
+                <h3 class="card__title">Погода на завтра</h3>
+                <p class="card__text">Зачем гадать дома — узнай прогноз и реши, стоит ли завтра ехать на природу или остаться в городе.</p>
             </div>
             <div class="card">
-                <img src="icons/doctor.svg" alt="Записаться к врачу" class="card__icon" />
+                <img src="img/icons/doctor.svg" alt="Записаться к врачу" class="card__icon" />
                 <h3 class="card__title">Записаться к врачу</h3>
                 <p class="card__text">Онлайн-запись в медицинские учреждения</p>
+            </div>
+        </section>
+
+        <section class="home-discovery page-section page-section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Планируйте день</span>
+                    <h2 class="section-header__title">Три идеи для быстрого старта</h2>
+                    <p class="section-header__subtitle">Выбрали самые востребованные страницы — переходите, чтобы за пару минут найти ответы на вопросы об учёбе, досуге и маршрутах.</p>
+                </div>
+                <div class="home-discovery__grid">
+                    <a class="discovery-card" href="education.html" style="background-image: url('img/gazety.jpg');">
+                        <span class="discovery-card__label">Образование</span>
+                        <h3 class="discovery-card__title">Учебные заведения Балаково</h3>
+                        <p class="discovery-card__text">Собрали детские сады, школы, колледжи и вузы с акцентом на сильные стороны и особенности приёма.</p>
+                        <div class="discovery-card__chips">
+                            <span>Детские сады</span>
+                            <span>Лицеи и школы</span>
+                            <span>Колледжи</span>
+                            <span>Вузы</span>
+                        </div>
+                        <span class="discovery-card__cta">Перейти к подборке</span>
+                    </a>
+                    <a class="discovery-card discovery-card--nature" href="places.html" style="background-image: url('img/v4gdvh84qwttf16a4369p14dm019zeol.jpg');">
+                        <span class="discovery-card__label">Отдых</span>
+                        <h3 class="discovery-card__title">Куда сходить вечером</h3>
+                        <p class="discovery-card__text">Променады по набережной, театры, музеи и природные маршруты — идеи для прогулок и встреч.</p>
+                        <div class="discovery-card__chips">
+                            <span>Маршруты</span>
+                            <span>Арт-пространства</span>
+                            <span>Природа</span>
+                            <span>Семейный отдых</span>
+                        </div>
+                        <span class="discovery-card__cta">Открыть «Интересные места»</span>
+                    </a>
+                    <a class="discovery-card discovery-card--map" href="map.html" style="background-image: url('img/1699978_original.jpg');">
+                        <span class="discovery-card__label">Навигация</span>
+                        <h3 class="discovery-card__title">Не знаешь, как найти путь?</h3>
+                        <p class="discovery-card__text">Открой карту Балаково: отмечены маршруты, городские службы и места для отдыха. Проложите путь в пару кликов.</p>
+                        <div class="discovery-card__chips">
+                            <span>Маршруты</span>
+                            <span>Службы</span>
+                            <span>24/7 точки</span>
+                        </div>
+                        <span class="discovery-card__cta">Перейти на карту</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container footer__container">
-            <p>© 2024 Балаково. Все права защищены.</p>
+            <p>© 2025 Балаково. Все права защищены.</p>
             <div class="social-links">
                 <a href="#" aria-label="VK">VK</a>
-                
             </div>
         </div>
     </footer>

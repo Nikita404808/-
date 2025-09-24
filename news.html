@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Новости Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--news">
+            <div class="container page-hero__content page-hero__content--split">
+                <div class="page-hero__text">
+                    <div class="page-hero__badge"><span class="page-hero__pulse"></span>Лента дня</div>
+                    <h1 class="page-hero__title">Главные новости Балаково</h1>
+                    <p class="page-hero__subtitle">Формируем честную и оперативную повестку: городские проекты, инвестиции, культура и люди.</p>
+                    <div class="page-hero__cta-group">
+                        <a href="#latest" class="btn btn-primary page-hero__btn">К свежим новостям</a>
+                        <a href="mailto:press@balakovo.ru" class="page-hero__link">Прислать новость</a>
+                    </div>
+                    <p class="page-hero__note">Ленту готовит пресс-служба администрации совместно с городскими медиа. Обновляется <strong>каждый час</strong>.</p>
+                </div>
+                <div class="page-hero__highlights">
+                    <div class="page-hero__highlight-card">
+                        <h3>Темы дня</h3>
+                        <p>Транспорт, развитие набережной, модернизация социальных объектов.</p>
+                    </div>
+                    <div class="page-hero__highlight-card">
+                        <h3>Подпишитесь</h3>
+                        <p>Получайте дайджест новых материалов каждое утро понедельника.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section" id="latest">
+            <div class="container">
+                <h2 class="page-section__title">Последние события</h2>
+                <div class="news-list-wrapper">
+                    <ul class="news-list">
+                        <li class="news-item news-item--highlight">
+                            <span class="news-item__badge">Важно</span>
+                            <h3 class="news-item__title">Запущен новый маршрут до набережной</h3>
+                            <p class="news-item__meta">12 апреля 2025</p>
+                            <p class="news-item__text">Муниципальный транспорт запустил вечерние рейсы к набережной, чтобы жителям было проще проводить время на свежем воздухе в тёплый сезон.</p>
+                        </li>
+                        <li class="news-item">
+                            <h3 class="news-item__title">Технопарк расширяет программу для стартапов</h3>
+                            <p class="news-item__meta">9 апреля 2025</p>
+                            <p class="news-item__text">Резиденты смогут получить поддержку экспертов Балаковской АЭС и доступ к лабораториям для тестирования новых энергетических решений.</p>
+                        </li>
+                        <li class="news-item">
+                            <h3 class="news-item__title">Благоустройство парка им. Павлова</h3>
+                            <p class="news-item__meta">2 апреля 2025</p>
+                            <p class="news-item__text">В парке появятся велодорожки, современная детская площадка и новая сцена для городских концертов. Работы завершатся к началу лета.</p>
+                        </li>
+                        <li class="news-item news-item--highlight">
+                            <span class="news-item__badge">Важно</span>
+                            <h3 class="news-item__title">Обновление мостового освещения</h3>
+                            <p class="news-item__meta">28 марта 2025</p>
+                            <p class="news-item__text">На городских мостах установят архитектурную подсветку, которая подчеркнёт силуэт Балаково и сделает движение в тёмное время суток безопаснее.</p>
+                        </li>
+                        <li class="news-item">
+                            <h3 class="news-item__title">Запуск сервиса «Городской диалог»</h3>
+                            <p class="news-item__meta">22 марта 2025</p>
+                            <p class="news-item__text">Жители смогут оставлять предложения по улучшению инфраструктуры, отслеживать статус обращений и голосовать за проекты благоустройства.</p>
+                        </li>
+                        <li class="news-item">
+                            <h3 class="news-item__title">Новый туристический маршрут по Волге</h3>
+                            <p class="news-item__meta">15 марта 2025</p>
+                            <p class="news-item__text">Стартует речная экскурсия с заходом на исторические пристани, интерактивной программой и мастер-классами по традиционным ремёслам.</p>
+                        </li>
+                        <li class="news-item news-item--highlight">
+                            <span class="news-item__badge">Важно</span>
+                            <h3 class="news-item__title">Реставрация исторического здания купца Деева</h3>
+                            <p class="news-item__meta">8 марта 2025</p>
+                            <p class="news-item__text">Фасад обновят с сохранением оригинальной лепнины, а внутри откроют центр креативных индустрий и кофейню с видом на Волгу.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="page-section page-section--alt">
+            <div class="container">
+                <h2 class="page-section__title">Подпишитесь на рассылку</h2>
+                <p class="page-section__lead">Раз в неделю присылаем подборку самых важных новостей и мероприятий.</p>
+                <form class="subscribe-form">
+                    <input type="email" class="subscribe-form__input" placeholder="Введите e-mail" aria-label="Введите e-mail" required />
+                    <button type="submit" class="btn btn-primary subscribe-form__btn">Подписаться</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

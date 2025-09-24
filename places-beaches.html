@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Пляжи Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--places">
+            <div class="container page-hero__content">
+                <h1 class="page-hero__title">Пляжи и водные зоны</h1>
+                <p class="page-hero__subtitle">Летний отдых на Волге: песчаные пляжи, инфраструктура и активные виды спорта</p>
+                <a href="places.html" class="btn btn-primary page-hero__btn">Вернуться ко всем категориям</a>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Маркетплейс мест</span>
+                    <h2 class="section-header__title">Пляжи (летний сезон)</h2>
+                    <p class="section-header__subtitle section-header__subtitle--desktop">Обновлённые городские пляжи, базы отдыха и зоны для активного спорта на воде.</p>
+                    <p class="section-header__subtitle section-header__subtitle--mobile">Городские пляжи и зоны для спорта на воде.</p>
+                </div>
+
+                <div class="places-filter">
+                    <a class="places-filter__link" href="places.html">Все категории</a>
+                    <a class="places-filter__link" href="places-parks.html">Парки и скверы</a>
+                    <a class="places-filter__link" href="places-restaurants.html">Рестораны</a>
+                    <a class="places-filter__link" href="places-theaters.html">Кинотеатры и театры</a>
+                    <a class="places-filter__link" href="places-museums.html">Музеи</a>
+                    <a class="places-filter__link" href="places-nature.html">Отдых на природе</a>
+                    <a class="places-filter__link" href="places-malls.html">Торговые центры</a>
+                    <a class="places-filter__link" href="places-hotels.html">Гостиницы</a>
+                    <a class="places-filter__link places-filter__link--active" href="places-beaches.html">Пляжи <span class="places-filter__tag">Лето</span></a>
+                    <a class="places-filter__link" href="places-fairs.html">Ярмарки и рынки</a>
+                </div>
+
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Городской пляж</span>
+                        <h3 class="listing-card__title">«Центральный»</h3>
+                        <p class="listing-card__text">Песчаная зона, спасательный пост, аренда шезлонгов и анимация выходного дня.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag listing-card__tag--summer">Сезон</span>
+                            <span class="listing-card__tag">Анимация</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Пляж</span>
+                        <h3 class="listing-card__title">«Лесной берег»</h3>
+                        <p class="listing-card__text">Тихое место с тенью от деревьев, волейбольной площадкой и прокатом sup-досок.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag listing-card__tag--summer">Сезон</span>
+                            <span class="listing-card__tag">SUP</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">База отдыха</span>
+                        <h3 class="listing-card__title">«Ривер Парк»</h3>
+                        <p class="listing-card__text">Чистый пляж, беседки, кафе и прокат катеров на базе отдыха.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag listing-card__tag--summer">Сезон</span>
+                            <span class="listing-card__tag">Катера</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Пляж</span>
+                        <h3 class="listing-card__title">«Песчаная коса»</h3>
+                        <p class="listing-card__text">Длинная береговая линия, зоны для семейного отдыха и food-truck ярмарка.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag listing-card__tag--summer">Сезон</span>
+                            <span class="listing-card__tag">Street food</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Активный пляж</span>
+                        <h3 class="listing-card__title">Wake-парк «Волна»</h3>
+                        <p class="listing-card__text">Катание на вейкборде, тренировки с инструкторами и лаунж-зона у воды.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag listing-card__tag--summer">Сезон</span>
+                            <span class="listing-card__tag">Вейкборд</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Пляж</span>
+                        <h3 class="listing-card__title">«Зелёная бухта»</h3>
+                        <p class="listing-card__text">Небольшая бухта с чистой водой, мангальными зонами и прокатом лодок.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag listing-card__tag--summer">Сезон</span>
+                            <span class="listing-card__tag">Мангалы</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

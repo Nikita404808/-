@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Гостиницы — Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--places">
+            <div class="container page-hero__content">
+                <h1 class="page-hero__title">Гостиницы и апартаменты</h1>
+                <p class="page-hero__subtitle">Подборка комфортных вариантов размещения в Балаково</p>
+                <a href="places.html" class="btn btn-primary page-hero__btn">Вернуться ко всем категориям</a>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Маркетплейс мест</span>
+                    <h2 class="section-header__title">Гостиницы</h2>
+                    <p class="section-header__subtitle section-header__subtitle--desktop">Выбирайте отели и апартаменты с видом на набережную, конференц-залами и wellness-сервисами.</p>
+                    <p class="section-header__subtitle section-header__subtitle--mobile">Отели и апартаменты для бизнеса и отдыха.</p>
+                </div>
+
+                <div class="places-filter">
+                    <a class="places-filter__link" href="places.html">Все категории</a>
+                    <a class="places-filter__link" href="places-parks.html">Парки и скверы</a>
+                    <a class="places-filter__link" href="places-restaurants.html">Рестораны</a>
+                    <a class="places-filter__link" href="places-theaters.html">Кинотеатры и театры</a>
+                    <a class="places-filter__link" href="places-museums.html">Музеи</a>
+                    <a class="places-filter__link" href="places-nature.html">Отдых на природе</a>
+                    <a class="places-filter__link" href="places-malls.html">Торговые центры</a>
+                    <a class="places-filter__link places-filter__link--active" href="places-hotels.html">Гостиницы</a>
+                    <a class="places-filter__link" href="places-beaches.html">Пляжи <span class="places-filter__tag">Лето</span></a>
+                    <a class="places-filter__link" href="places-fairs.html">Ярмарки и рынки</a>
+                </div>
+
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Отель</span>
+                        <h3 class="listing-card__title">«Волга Ривер»</h3>
+                        <p class="listing-card__text">4* отель на набережной, ресторан, SPA и панорамные номера.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">SPA</span>
+                            <span class="listing-card__tag">Вид на Волгу</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Бизнес-отель</span>
+                        <h3 class="listing-card__title">«Сити Конгресс»</h3>
+                        <p class="listing-card__text">Конференц-залы, бизнес-сервис, early breakfast и трансфер.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Конференц-залы</span>
+                            <span class="listing-card__tag">Бизнес</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Бутик-отель</span>
+                        <h3 class="listing-card__title">«Петровский»</h3>
+                        <p class="listing-card__text">Стильные интерьеры, авторский ресторан и камерная атмосфера.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Бутик</span>
+                            <span class="listing-card__tag">Ресторан</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Апартаменты</span>
+                        <h3 class="listing-card__title">«Loft на канале»</h3>
+                        <p class="listing-card__text">Современные апартаменты с кухней, само-заселением и парковкой.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Само-заселение</span>
+                            <span class="listing-card__tag">Парковка</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Гостевой дом</span>
+                        <h3 class="listing-card__title">«Причал»</h3>
+                        <p class="listing-card__text">Небольшой семейный формат рядом с яхт-клубом, летняя терраса.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Семья</span>
+                            <span class="listing-card__tag">Терраса</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Hostel</span>
+                        <h3 class="listing-card__title">«Energy Hub»</h3>
+                        <p class="listing-card__text">Коворкинг, общие и приватные комнаты, мероприятия для путешественников.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Коворкинг</span>
+                            <span class="listing-card__tag">Комьюнити</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

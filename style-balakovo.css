@@ -16,8 +16,19 @@ body {
 }
 
 /* Навигация */
+.nav__list {
+    align-items: center;
+}
+
+.nav__list li {
+    display: flex;
+    align-items: center;
+}
+
 .nav__list li a {
     color: #FFFFFF; /* белый текст */
+    display: flex;
+    align-items: center;
 }
 
 .nav__list li a:hover {
@@ -56,4 +67,301 @@ body {
 
 .social-links a:hover {
     color: #A3D5FF; /* светло-голубой */
+}
+
+/* Бургер меню */
+.burger-btn span {
+    background-color: #FFFFFF; /* белые полоски бургера */
+}
+
+/* Выпадающее меню */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: #005A9C; /* темно-синий фон */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    list-style: none;
+    padding: 12px 0;
+    margin: 8px 0 0 0;
+    border: 1px solid #003d7a; /* темная рамка */
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 24px;
+    color: #FFFFFF; /* белый текст */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    margin: 0 8px;
+    position: relative;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #005A9C; /* темно-синий hover */
+    color: #A3D5FF; /* светло-голубой текст при hover */
+    transform: translateX(4px);
+}
+
+.dropdown-menu li a::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid #A3D5FF; /* светло-голубая стрелка */
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-menu li a:hover::before {
+    opacity: 1;
+}
+
+
+/* Страницы разделов */
+.page-hero__title,
+.page-hero__subtitle {
+    color: #FFFFFF;
+}
+
+.page-section {
+    background-color: transparent;
+}
+
+.page-section--alt {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.page-section__title {
+    color: #FFFFFF;
+}
+
+.page-section__lead {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.page-card {
+    background-color: rgba(255, 255, 255, 0.96);
+    color: #1f2a44;
+}
+
+.page-card__title {
+    color: #005A9C;
+}
+
+.news-item,
+.feature-list__item,
+.media-gallery__item {
+    background-color: rgba(255, 255, 255, 0.96);
+    color: #1f2a44;
+}
+
+.page-hero__link {
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.6);
+}
+
+.page-hero__link:hover {
+    color: #FFF5A5;
+    border-color: #FFF5A5;
+}
+
+.page-hero__highlight-card {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.page-hero__highlight-card h3 {
+    color: #FFFFFF;
+}
+
+.page-hero__highlight-card p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.page-hero__badge {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFFFFF;
+}
+
+.page-card__chip {
+    background: rgba(255, 215, 0, 0.18);
+    color: #FFFFFF;
+}
+
+.page-card__chip::before {
+    background: #FFD700;
+}
+
+.feature-list__number {
+    color: #005A9C;
+}
+
+.feature-list__title,
+.media-gallery__title {
+    color: #005A9C;
+}
+
+.media-tile--industry {
+    background-image: linear-gradient(135deg, rgba(0, 90, 156, 0.8), rgba(0, 159, 255, 0.7));
+}
+
+.media-tile--events {
+    background-image: linear-gradient(135deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.7));
+}
+
+.subscribe-form__input {
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.92);
+    color: #1f2a44;
+}
+
+.subscribe-form__input::placeholder {
+    color: rgba(31, 42, 68, 0.6);
+}
+
+.feature-list__text,
+.media-gallery__text,
+.page-card__text,
+.news-item__text {
+    color: #1f2a44;
+}
+
+.gallery-header__label {
+    background: rgba(255, 215, 0, 0.25);
+    color: #FFFFFF;
+}
+
+.gallery-header__title,
+.gallery-header__subtitle {
+    color: #FFFFFF;
+}
+
+.gallery-card {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.gallery-card figcaption {
+    background: rgba(0, 90, 156, 0.75);
+}
+
+.section-header__label {
+    background: rgba(255, 215, 0, 0.22);
+    color: #FFFFFF;
+}
+
+.section-header__title,
+.section-header__subtitle {
+    color: #FFFFFF;
+}
+
+
+.stats-card {
+    background: linear-gradient(145deg, rgba(0, 90, 156, 0.35), rgba(0, 122, 204, 0.45));
+    color: #ffffff;
+}
+
+.stats-card::before {
+    background: rgba(255, 215, 0, 0.3);
+}
+
+.stats-card__number {
+    color: #FFD700;
+}
+
+.stats-card__label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.lifestyle-card {
+    background: linear-gradient(160deg, rgba(0, 90, 156, 0.4) 0%, rgba(0, 122, 204, 0.3) 100%);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.26);
+}
+
+.lifestyle-card::before {
+    background: linear-gradient(140deg, rgba(255, 215, 0, 0.16), rgba(163, 213, 255, 0.16));
+}
+
+.lifestyle-card__icon {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.lifestyle-card__title,
+.lifestyle-card__text,
+.lifestyle-card__list li {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.gallery-card {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.gallery-card figcaption {
+    background: rgba(0, 90, 156, 0.75);
+}
+
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .nav__list {
+        background-color: #005A9C; /* темно-синий фон для мобильного меню */
+    }
+
+    .nav__list li a {
+        color: #FFFFFF; /* белый текст в мобильном меню */
+    }
+
+    .nav__list li a:hover {
+        color: #A3D5FF; /* светло-голубой hover */
+    }
+
+    .hero__title {
+        color: #FFFFFF;
+    }
+
+    .hero__subtitle {
+        color: #FFFFFF;
+    }
+
+    .dropdown--mobile-hidden {
+        display: none !important;
+    }
 }

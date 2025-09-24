@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ярмарки и рынки — Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--places">
+            <div class="container page-hero__content">
+                <h1 class="page-hero__title">Ярмарки и рынки</h1>
+                <p class="page-hero__subtitle">Где найти фермерские продукты, ремесло и атмосферу городских событий</p>
+                <a href="places.html" class="btn btn-primary page-hero__btn">Вернуться ко всем категориям</a>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Маркетплейс мест</span>
+                    <h2 class="section-header__title">Ярмарки и рынки Балаково</h2>
+                    <p class="section-header__subtitle section-header__subtitle--desktop">Фермерские ярмарки, рынки с локальными продуктами и ремесленные фестивали — сбор аутентичных вкусов.</p>
+                    <p class="section-header__subtitle section-header__subtitle--mobile">Фермерские ярмарки и ремесло Балаково.</p>
+                </div>
+
+                <div class="places-filter">
+                    <a class="places-filter__link" href="places.html">Все категории</a>
+                    <a class="places-filter__link" href="places-parks.html">Парки и скверы</a>
+                    <a class="places-filter__link" href="places-restaurants.html">Рестораны</a>
+                    <a class="places-filter__link" href="places-theaters.html">Кинотеатры и театры</a>
+                    <a class="places-filter__link" href="places-museums.html">Музеи</a>
+                    <a class="places-filter__link" href="places-nature.html">Отдых на природе</a>
+                    <a class="places-filter__link" href="places-malls.html">Торговые центры</a>
+                    <a class="places-filter__link" href="places-hotels.html">Гостиницы</a>
+                    <a class="places-filter__link" href="places-beaches.html">Пляжи <span class="places-filter__tag">Лето</span></a>
+                    <a class="places-filter__link places-filter__link--active" href="places-fairs.html">Ярмарки и рынки</a>
+                </div>
+
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Фермерский рынок</span>
+                        <h3 class="listing-card__title">«Набережный»</h3>
+                        <p class="listing-card__text">Свежие продукты от местных хозяйств, дегустации и гастро-ярмарки по выходным.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Фермеры</span>
+                            <span class="listing-card__tag">Дегустации</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Ярмарка</span>
+                        <h3 class="listing-card__title">Площадь Свободы</h3>
+                        <p class="listing-card__text">Сезонные ярмарки, уличные музыканты и тематические мастер-классы.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Музыка</span>
+                            <span class="listing-card__tag">Мастер-классы</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Рынок</span>
+                        <h3 class="listing-card__title">«Центральный»</h3>
+                        <p class="listing-card__text">Классический крытый рынок: свежие овощи, мясо, бакалея и ремесленные изделия.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Свежие продукты</span>
+                            <span class="listing-card__tag">Ремесло</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Городская ярмарка</span>
+                        <h3 class="listing-card__title">Гастроярмарка «Балаковские выходные»</h3>
+                        <p class="listing-card__text">Ежемесячные фестивали у набережной с фуд-траками и локальными брендами.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Фестивали</span>
+                            <span class="listing-card__tag">Street food</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Ремесленный рынок</span>
+                        <h3 class="listing-card__title">«Творческая слобода»</h3>
+                        <p class="listing-card__text">Хендмейд, мастер-классы и локальные дизайнеры. Отлично подходит для подарков.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Handmade</span>
+                            <span class="listing-card__tag">Подарки</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Эко-рынок</span>
+                        <h3 class="listing-card__title">«ЭкоДар»</h3>
+                        <p class="listing-card__text">Продукция без пластика, эко-товары для дома и регулярные лекции по sustainability.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Эко</span>
+                            <span class="listing-card__tag">Zero waste</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

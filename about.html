@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>О городе — Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--about">
+            <div class="container page-hero__content page-hero__content--split">
+                <div class="page-hero__text">
+                    <span class="page-hero__eyebrow">Город на энергии Волги</span>
+                    <h1 class="page-hero__title">Балаково — место, где промышленность и Волга живут в одном ритме</h1>
+                    <p class="page-hero__subtitle page-hero__subtitle-mobile-hidden">Мы объединяем высокие технологии, комфортную городскую среду и уважение к природному наследию региона.</p>
+                    <div class="page-hero__cta-group">
+                        <a href="infrastructure.html" class="btn btn-primary page-hero__btn">План развития 2030</a>
+                        <a href="places.html" class="page-hero__link">Маршруты для прогулок</a>
+                    </div>
+                    <p class="page-hero__note"><strong>Основан в 1762 году</strong> как торговая пристань. Сегодня Балаково — драйвер энергетики и промышленности Поволжья.</p>
+                </div>
+                <div class="page-hero__highlights">
+                    <div class="page-hero__highlight-card">
+                        <h3>Технологии</h3>
+                        <p>АЭС, машиностроение и химический кластер формируют экономику с фокусом на инновации.</p>
+                    </div>
+                    <div class="page-hero__highlight-card">
+                        <h3>Комфорт</h3>
+                        <p>Преобразованные набережные, парки и культурные пространства дарят городу своё лицо.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Кратко о городе</span>
+                    <h2 class="section-header__title">Балаково — место роста и энергии</h2>
+                    <p class="section-header__subtitle section-header__subtitle--desktop">Балаково стоит на живописном берегу Волги и известен как крупный энергетический узел страны. Здесь работают крупнейшие предприятия химической, машиностроительной и энергетической отраслей.</p>
+                    <p class="section-header__subtitle section-header__subtitle--mobile">Балаково — на Волге, город энергий и крупных предприятий.</p>
+                </div>
+                <div class="page-section__grid">
+                    <article class="page-card page-card--feature">
+                        <div class="page-card__icon-wrap">
+                            <img src="img/icons/energy.svg" alt="Энергетика Балаково" loading="lazy" />
+                            <span class="page-card__icon-label">Энергия</span>
+                        </div>
+                        <div class="page-card__body">
+                            <h3 class="page-card__title">Энергетическое сердце Поволжья</h3>
+                            <p class="page-card__text">Балаковская АЭС, каскад ГЭС и машиностроительные предприятия формируют кластер передовых технологий.</p>
+                            <span class="page-card__meta">7 500+ специалистов</span>
+                        </div>
+                    </article>
+                    <article class="page-card page-card--feature">
+                        <div class="page-card__icon-wrap">
+                            <img src="img/icons/location.svg" alt="Комфорт для жителей" loading="lazy" />
+                            <span class="page-card__icon-label">Комфорт</span>
+                        </div>
+                        <div class="page-card__body">
+                            <h3 class="page-card__title">Комфорт для жителей</h3>
+                            <p class="page-card__text">Набережная, парки, веломаршруты и культурные пространства делают прогулки ежедневной привычкой.</p>
+                            <span class="page-card__meta">25 проектов в 2024</span>
+                        </div>
+                    </article>
+                    <article class="page-card page-card--feature">
+                        <div class="page-card__icon-wrap">
+                            <img src="img/icons/bus.svg" alt="Удобная география" loading="lazy" />
+                            <span class="page-card__icon-label">Логистика</span>
+                        </div>
+                        <div class="page-card__body">
+                            <h3 class="page-card__title">Удобная география</h3>
+                            <p class="page-card__text">Балаково — логистический узел: федеральные трассы, железная дорога и речной порт открывают путь на север и юг страны.</p>
+                            <span class="page-card__meta">4 транспортные коридора</span>
+                        </div>
+                    </article>
+                    <article class="page-card page-card--feature">
+                        <div class="page-card__icon-wrap">
+                            <img src="img/icons/community.svg" alt="Сильное сообщество" loading="lazy" />
+                            <span class="page-card__icon-label">Сообщество</span>
+                        </div>
+                        <div class="page-card__body">
+                            <h3 class="page-card__title">Сильное сообщество</h3>
+                            <p class="page-card__text">ТОСы и волонтёры вовлечены в благоустройство районов, проекты добрососедства и помощь в проведении крупных городских событий.</p>
+                            <span class="page-card__meta">120+ инициатив в год</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="stats-panel">
+                    <div class="stats-grid">
+                        <div class="stats-card">
+                            <span class="stats-card__number">200 000+</span>
+                            <p class="stats-card__label">жителей выбирают Балаково за динамику, комфорт и работу рядом с домом</p>
+                        </div>
+                        <div class="stats-card">
+                            <span class="stats-card__number">3</span>
+                            <p class="stats-card__label">промышленные зоны с готовыми коммуникациями и доступом к федеральным трассам</p>
+                        </div>
+                        <div class="stats-card">
+                            <span class="stats-card__number">25+</span>
+                            <p class="stats-card__label">общественных пространств: набережная, парки, дворы с детскими и спортивными зонами</p>
+                        </div>
+                        <div class="stats-card">
+                            <span class="stats-card__number">70%</span>
+                            <p class="stats-card__label">городских проектов реализуются с участием жителей и компаний города</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section page-section--alt">
+            <div class="container">
+                <h2 class="page-section__title">Жизнь в Балаково</h2>
+                <div class="lifestyle-grid">
+                    <article class="lifestyle-card">
+                        <div class="lifestyle-card__icon">
+                            <img src="img/icons/gear.svg" alt="Образование" loading="lazy" />
+                        </div>
+                        <div class="lifestyle-card__body">
+                            <h3 class="lifestyle-card__title">Образование</h3>
+                            <p class="lifestyle-card__text">Колледжи, технопарки и ИТ-лицеи готовят специалистов под запросы индустрии.</p>
+                            <ul class="lifestyle-card__list">
+                                <li>филиалы ведущих вузов и программы стажировок на АЭС</li>
+                                <li>STEM-классы и инженерные лагеря для школьников</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="lifestyle-card">
+                        <div class="lifestyle-card__icon">
+                            <img src="img/icons/community.svg" alt="Культура" loading="lazy" />
+                        </div>
+                        <div class="lifestyle-card__body">
+                            <h3 class="lifestyle-card__title">Культура и события</h3>
+                            <p class="lifestyle-card__text">От камерных театров до фестивалей на набережной — культурная жизнь не останавливается круглый год.</p>
+                            <ul class="lifestyle-card__list">
+                                <li>городские арт-резиденции и креативные пространства</li>
+                                <li>летние кинопоказы под открытым небом и ярмарки</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="lifestyle-card">
+                        <div class="lifestyle-card__icon">
+                            <img src="img/icons/park.svg" alt="Спорт и отдых" loading="lazy" />
+                        </div>
+                        <div class="lifestyle-card__body">
+                            <h3 class="lifestyle-card__title">Спорт и отдых</h3>
+                            <p class="lifestyle-card__text">Город поощряет активный образ жизни: от водных видов спорта до новых экотроп.</p>
+                            <ul class="lifestyle-card__list">
+                                <li>регаты на Волге и ежегодный Балаковский марафон</li>
+                                <li>парк экстремальных видов спорта и сеть велодорожек</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Маршруты</span>
+                    <h2 class="section-header__title">Маршруты для прогулок</h2>
+                    <p class="section-header__subtitle">Подборка открытых пространств для прогулок, активного отдыха и наблюдения за городом.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/balakovo-river-real.jpg');"></div>
+                        <span class="listing-card__category">Набережная</span>
+                        <h3 class="listing-card__title">Набережная и судоходный канал</h3>
+                        <p class="listing-card__text">Подсветка мостов, уличные музыканты и виды на Волгу для вечерних прогулок.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Вид</span>
+                            <span class="listing-card__tag">Музыка</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-parks-thumb.jpg');"></div>
+                        <span class="listing-card__category">Парк</span>
+                        <h3 class="listing-card__title">Парк им. Павлова</h3>
+                        <p class="listing-card__text">Прокат самокатов, летние кафе и сцена для мероприятий в центре города.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Семья</span>
+                            <span class="listing-card__tag">Прокат</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-parks-thumb.jpg');"></div>
+                        <span class="listing-card__category">Экотропа</span>
+                        <h3 class="listing-card__title">Эко-тропа «Щербакова остров»</h3>
+                        <p class="listing-card__text">Природный маршрут с зонами для пикника, наблюдением за птицами и видами на Волгу.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Пикник</span>
+                            <span class="listing-card__tag">Природа</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="page-section page-section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Отдых</span>
+                    <h2 class="section-header__title">Для семейного отдыха</h2>
+                    <p class="section-header__subtitle">Знаковые места, где приятно провести выходной всей семьёй.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span клас="listing-card__category">Этнопарк</span>
+                        <h3 class="listing-card__title">Этнопарк «Покровский двор»</h3>
+                        <p class="listing-card__text">Фермерские ярмарки, ремесло и интерактивные программы для всей семьи.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Фермеры</span>
+                            <span class="listing-card__tag">Ремесло</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Каток / роллердром</span>
+                        <h3 class="listing-card__title">Городской каток</h3>
+                        <p class="listing-card__text">Зимой — ледовое поле, летом — роллердром и мастер-классы на свежем воздухе.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Зима</span>
+                            <span class="listing-card__tag">Роллеры</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-restaurants-thumb.jpg');"></div>
+                        <span class="listing-card__category">Культура</span>
+                        <h3 class="listing-card__title">Дом культуры Балаково</h3>
+                        <p class="listing-card__text">Выставки, концерты и кинопоказы с участием местных артистов и коллективов.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Концерты</span>
+                            <span class="listing-card__tag">Кино</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="gallery-header">
+                    <span class="gallery-header__label">Балаковские виды</span>
+                    <h2 class="gallery-header__title">Фотографии города</h2>
+                    <p class="gallery-header__subtitle">Увидьте Балаково с разных сторон: прогулки по набережной, индустриальный драйв, ночные огни и современные кварталы.</p>
+                </div>
+                <div class="page-album">
+                    <div class="gallery-grid">
+                        <figure class="gallery-card gallery-card--large">
+                            <img src="img/a53bd40a-9b92-47ff-82eb-0784c4751b15.jpg" alt="Набережная Балаково" loading="lazy" />
+                            <figcaption>
+                                <span class="gallery-card__title">Набережная и Волга</span>
+                                <span class="gallery-card__subtitle">Прогулки и летние фестивали</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="gallery-card gallery-card--square">
+                            <img src="img/XL.webp" alt="Парки" loading="lazy" />
+                            <figcaption>
+                                <span class="gallery-card__title">Парки</span>
+                                <span class="gallery-card__subtitle">Маршруты для прогулок</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="gallery-card gallery-card--wide">
+                            <img src="img/2f671fa0d55f0aec01f424541d096f71_XL.jpg" alt="Индустрия" loading="lazy" />
+                            <figcaption>
+                                <span class="gallery-card__title">Индустрия</span>
+                                <span class="gallery-card__subtitle">Энергетика города</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="gallery-card gallery-card--portrait">
+                            <img src="img/L_height.webp" alt="Современный Балаково" loading="lazy" />
+                            <figcaption>
+                                <span class="gallery-card__title">Современный город</span>
+                                <span class="gallery-card__subtitle">Новые кварталы и офисы</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

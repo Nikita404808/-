@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Учебные заведения — Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--education">
+            <div class="container page-hero__content page-hero__content--split">
+                <div class="page-hero__text">
+                    <span class="page-hero__eyebrow">Образование в шаге от дома</span>
+                    <h1 class="page-hero__title">Учебные заведения Балаково</h1>
+                    <p class="page-hero__subtitle">От первых шагов в детском саду до инженерных специальностей — рассказываем, где учиться и развиваться в городе.</p>
+                    <div class="page-hero__cta-group">
+                        <a href="https://balakovo.sru.edu" class="btn btn-primary page-hero__btn">Образовательные проекты</a>
+                        <a href="map.html" class="page-hero__link">Посмотреть на карте</a>
+                    </div>
+                </div>
+                <div class="page-hero__highlights">
+                    <div class="page-hero__highlight-card">
+                        <h3>40+</h3>
+                        <p>детских садов и центров раннего развития в микрорайонах Балаково.</p>
+                    </div>
+                    <div class="page-hero__highlight-card">
+                        <h3>25+</h3>
+                        <p>школ, лицеев и гимназий с профильными и инженерными классами.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Дошкольное образование</span>
+                    <h2 class="section-header__title">Детские сады</h2>
+                    <p class="section-header__subtitle">Уютные пространства, современные игровые зоны и программы развития для самых маленьких жителей.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-parks-thumb.jpg');"></div>
+                        <span class="listing-card__category">Детский сад</span>
+                        <h3 class="listing-card__title">«Радуга»</h3>
+                        <p class="listing-card__text">Логопедические группы, музыкальные занятия и адаптивная физкультура.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">3–7 лет</span>
+                            <span class="listing-card__tag">Подготовка к школе</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-restaurants-thumb.jpg');"></div>
+                        <span class="listing-card__category">Детский сад</span>
+                        <h3 class="listing-card__title">«Сказка на Волге»</h3>
+                        <p class="listing-card__text">Закрытая территория, развивающие мастерские и театральная студия.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Мастерские</span>
+                            <span class="listing-card__tag">Театр</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Центр</span>
+                        <h3 class="listing-card__title">Центр раннего развития</h3>
+                        <p class="listing-card__text">Мини-группы, занятия с психологом и адаптация для детей до 3 лет.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">0–3 года</span>
+                            <span class="listing-card__tag">Психолог</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Школьные годы</span>
+                    <h2 class="section-header__title">Школы и лицеи</h2>
+                    <p class="section-header__subtitle">Комплексный подход к образованию: STEM-направления, билингвальные программы и кадетские классы.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-malls-thumb.jpg');"></div>
+                        <span class="listing-card__category">Лицей</span>
+                        <h3 class="listing-card__title">Лицей №2</h3>
+                        <p class="listing-card__text">Инженерные и IT-классы, лаборатории и подготовка к олимпиадам.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">STEM</span>
+                            <span class="listing-card__tag">Олимпиады</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Школа</span>
+                        <h3 class="listing-card__title">Гимназия «Волга»</h3>
+                        <p class="listing-card__text">Углублённое изучение английского языка, медиатека и театр на английском.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Билингв</span>
+                            <span class="listing-card__tag">Театр</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Кадетский класс</span>
+                        <h3 class="listing-card__title">Школа №7</h3>
+                        <p class="listing-card__text">Военно-патриотическая подготовка, спортивные секции и профильные лагеря.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Кадеты</span>
+                            <span class="listing-card__tag">Спорт</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Средне-специальное</span>
+                    <h2 class="section-header__title">Колледжи и техникумы</h2>
+                    <p class="section-header__subtitle">Практико-ориентированное обучение, дуальные программы и стажировки на предприятиях Балаково.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/gazety.jpg');"></div>
+                        <span class="listing-card__category">Колледж</span>
+                        <h3 class="listing-card__title">Энергетический колледж</h3>
+                        <p class="listing-card__text">Подготовка энергетиков и электромонтёров, лаборатории с современными стендами.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Дуальное</span>
+                            <span class="listing-card__tag">Стажировки</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-museums-thumb.jpg');"></div>
+                        <span class="listing-card__category">Техникум</span>
+                        <h3 class="listing-card__title">Политехнический техникум</h3>
+                        <p class="listing-card__text">Машиностроение, IT-специальности и проектные мастерские.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Проекты</span>
+                            <span class="listing-card__tag">IT</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-restaurants-thumb.jpg');"></div>
+                        <span class="listing-card__category">Колледж</span>
+                        <h3 class="listing-card__title">Социально-педагогический колледж</h3>
+                        <p class="listing-card__text">Подготовка педагогов, психологов и специалистов по работе с детьми.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Педагогика</span>
+                            <span class="listing-card__tag">Практика</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Высшее образование</span>
+                    <h2 class="section-header__title">Институты и вузы</h2>
+                    <p class="section-header__subtitle">Кампусы партнёрских вузов, магистратура и программы повышения квалификации.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/2f671fa0d55f0aec01f424541d096f71_XL.jpg');"></div>
+                        <span class="listing-card__category">Университет</span>
+                        <h3 class="listing-card__title">Филиал технического университета</h3>
+                        <p class="listing-card__text">Инженерные направления, лаборатории и сотрудничество с промышленными предприятиями.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Инженерия</span>
+                            <span class="listing-card__tag">R&D</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/L_height.webp');"></div>
+                        <span class="listing-card__category">Институт</span>
+                        <h3 class="listing-card__title">Гуманитарный институт</h3>
+                        <p class="listing-card__text">Менеджмент, экономика, культурные проекты и студенческие медиа.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Менеджмент</span>
+                            <span class="listing-card__tag">Медиа</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/XL.webp');"></div>
+                        <span class="listing-card__category">Центр</span>
+                        <h3 class="listing-card__title">Центр дополнительного образования</h3>
+                        <p class="listing-card__text">Курсы повышения квалификации, цифровые навыки и программы для взрослых.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Курсы</span>
+                            <span class="listing-card__tag">Цифровые навыки</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Инфраструктура Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--infrastructure">
+            <div class="container page-hero__content page-hero__content--split">
+                <div class="page-hero__text">
+                    <span class="page-hero__eyebrow">Город сервисов 24/7</span>
+                    <h1 class="page-hero__title">Инфраструктура Балаково — поддержка жителей на каждом шаге</h1>
+                    <p class="page-hero__subtitle">Собрали ключевые службы города: больницы, полиция, госуслуги и пожарные части — всё рядом и готово помочь.</p>
+                    <div class="page-hero__cta-group">
+                        <a href="https://yandex.ru/maps/?text=службы%20Балаково" class="btn btn-primary page-hero__btn">Посмотреть на карте</a>
+                        <a href="news.html" class="page-hero__link">Новости инфраструктуры</a>
+                    </div>
+                </div>
+                <div class="page-hero__highlights">
+                    <div class="page-hero__highlight-card">
+                        <h3>145+</h3>
+                        <p>Социальных учреждений в шаговой доступности по всему городу.</p>
+                    </div>
+                    <div class="page-hero__highlight-card">
+                        <h3>15 минут</h3>
+                        <p>Среднее время до ближайшей службы реагирования из любой точки Балаково.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Здравоохранение</span>
+                    <h2 class="section-header__title">Больницы и клиники</h2>
+                    <p class="section-header__subtitle">Современное оборудование, цифровые сервисы и круглосуточные дежурства — медицина Балаково держит высокую планку.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/a53bd40a-9b92-47ff-82eb-0784c4751b15.jpg');"></div>
+                        <span class="listing-card__category">Городская больница</span>
+                        <h3 class="listing-card__title">Клиническая больница №1</h3>
+                        <p class="listing-card__text">Стационар на 600 мест, травмпункт и отделение скорой помощи с телемедициной.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">24/7</span>
+                            <span class="listing-card__tag">Телемедицина</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/1699978_original.jpg');"></div>
+                        <span class="listing-card__category">Диагностика</span>
+                        <h3 class="listing-card__title">Центр высокоточной диагностики</h3>
+                        <p class="listing-card__text">МРТ, КТ, лаборатория и кабинет профилактики с записью через портал госуслуг.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">МРТ</span>
+                            <span class="listing-card__tag">Онлайн-запись</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/balakovo_foto_18_201.jpg');"></div>
+                        <span class="listing-card__category">Поликлиника</span>
+                        <h3 class="listing-card__title">Семейный медцентр «Волга»</h3>
+                        <p class="listing-card__text">Приём терапевта, педиатрия и дневной стационар для реабилитации после операций.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Педиатрия</span>
+                            <span class="listing-card__tag">Реабилитация</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Безопасность</span>
+                    <h2 class="section-header__title">Полицейские участки</h2>
+                    <p class="section-header__subtitle">Опорные пункты и патрульные части обеспечивают спокойствие районов и оперативно реагируют на вызовы.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/XL.webp');"></div>
+                        <span class="listing-card__category">ГУ МВД</span>
+                        <h3 class="listing-card__title">Центральный отдел полиции</h3>
+                        <p class="listing-card__text">Координирует работу участковых, выдаёт справки и принимает обращения граждан в один визит.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Единое окно</span>
+                            <span class="listing-card__tag">Видеоаналитика</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-malls-thumb.jpg');"></div>
+                        <span class="listing-card__category">Патруль</span>
+                        <h3 class="listing-card__title">Участок «Северный»</h3>
+                        <p class="listing-card__text">Патрулирование новых кварталов, быстрые рейды по обращениям через мобильное приложение.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Патруль</span>
+                            <span class="listing-card__tag">Мобильный вызов</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/v4gdvh84qwttf16a4369p14dm019zeol.jpg');"></div>
+                        <span class="listing-card__category">ДПС</span>
+                        <h3 class="listing-card__title">Отдельный батальон ГИБДД</h3>
+                        <p class="listing-card__text">Контроль движения на мостах и выездах из города, эвакуация и помощь на трассах.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">ГИБДД</span>
+                            <span class="listing-card__tag">Ночной пост</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Город и услуги</span>
+                    <h2 class="section-header__title">Государственные учреждения</h2>
+                    <p class="section-header__subtitle">Административные центры и сервисы: приём граждан, МФЦ и специализированные ведомства.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Администрация</span>
+                        <h3 class="listing-card__title">Мэрия Балаково</h3>
+                        <p class="listing-card__text">Открытые приёмы жителей, проектные офисы и публичные презентации городских программ.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Приём граждан</span>
+                            <span class="listing-card__tag">Проекты</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/gazety.jpg');"></div>
+                        <span class="listing-card__category">МФЦ</span>
+                        <h3 class="listing-card__title">Многофункциональный центр</h3>
+                        <p class="listing-card__text">150 государственных услуг в одном месте, электронная очередь и помощь с госпорталом.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">150 услуг</span>
+                            <span class="listing-card__tag">Электронная очередь</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-restaurants-thumb.jpg');"></div>
+                        <span class="listing-card__category">Соцзащита</span>
+                        <h3 class="listing-card__title">Центр поддержки семей</h3>
+                        <p class="listing-card__text">Сертификаты, пособия и психологическая помощь, отдельная линия для волонтёров.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Пособия</span>
+                            <span class="listing-card__tag">Поддержка</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Оперативные службы</span>
+                    <h2 class="section-header__title">Пожарные части</h2>
+                    <p class="section-header__subtitle">Районные пожарные посты оснащены модернизированной техникой и командами добровольцев.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">ПСЧ-11</span>
+                        <h3 class="listing-card__title">Центральная пожарная часть</h3>
+                        <p class="listing-card__text">Высотные автолестницы, учебный полигон и оперативный штаб гражданской обороны.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Оперативно</span>
+                            <span class="listing-card__tag">Учебный полигон</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-parks-thumb.jpg');"></div>
+                        <span class="listing-card__category">Добровольцы</span>
+                        <h3 class="listing-card__title">Пожарно-спасательный пост «Набережный»</h3>
+                        <p class="listing-card__text">Обслуживает частный сектор и набережную, проводит тренировки по эвакуации для жителей.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Волонтёры</span>
+                            <span class="listing-card__tag">Тренировки</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Спецтехника</span>
+                        <h3 class="listing-card__title">Пожарная часть «Индустриальная»</h3>
+                        <p class="listing-card__text">Быстрый доступ к промзоне, запас пенообразователей и техника для ликвидации химических аварий.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Промзона</span>
+                            <span class="listing-card__tag">Спецтехника</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

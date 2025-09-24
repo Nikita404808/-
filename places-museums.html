@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Музеи — Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--places">
+            <div class="container page-hero__content">
+                <h1 class="page-hero__title">Музеи и галереи Балаково</h1>
+                <p class="page-hero__subtitle">От промышленной истории до современного искусства — выберите музей под своё настроение.</p>
+                <a href="places.html" class="btn btn-primary page-hero__btn">Вернуться ко всем категориям</a>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Маркетплейс мест</span>
+                    <h2 class="section-header__title">Музейные маршруты</h2>
+                    <p class="section-header__subtitle section-header__subtitle--desktop">Собрали ключевые культурные площадки: коллекции, интерактивы и семейные программы.</p>
+                    <p class="section-header__subtitle section-header__subtitle--mobile">Главные музеи и галереи города.</p>
+                </div>
+
+                <div class="places-filter">
+                    <a class="places-filter__link" href="places.html">Все категории</a>
+                    <a class="places-filter__link" href="places-parks.html">Парки и скверы</a>
+                    <a class="places-filter__link" href="places-restaurants.html">Рестораны</a>
+                    <a class="places-filter__link" href="places-theaters.html">Кинотеатры и театры</a>
+                    <a class="places-filter__link places-filter__link--active" href="places-museums.html">Музеи</a>
+                    <a class="places-filter__link" href="places-nature.html">Отдых на природе</a>
+                    <a class="places-filter__link" href="places-malls.html">Торговые центры</a>
+                    <a class="places-filter__link" href="places-hotels.html">Гостиницы</a>
+                    <a class="places-filter__link" href="places-beaches.html">Пляжи <span class="places-filter__tag">Лето</span></a>
+                    <a class="places-filter__link" href="places-fairs.html">Ярмарки и рынки</a>
+                </div>
+
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">История</span>
+                        <h3 class="listing-card__title">Краеведческий музей</h3>
+                        <p class="listing-card__text">Экспозиции об истории Балаково, интерактивные макеты и редкие фотоархивы.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Экспозиции</span>
+                            <span class="listing-card__tag">Архив</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Культура</span>
+                        <h3 class="listing-card__title">Галерея «Гидроэнергия»</h3>
+                        <p class="listing-card__text">Выставки современного искусства, резиденции художников и образовательные лекции.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Арт</span>
+                            <span class="listing-card__tag">Лекции</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-restaurants-thumb.jpg');"></div>
+                        <span class="listing-card__category">Техника</span>
+                        <h3 class="listing-card__title">Музей энергетиков</h3>
+                        <p class="listing-card__text">Экскурсии по истории ГЭС, интерактивные макеты и VR-аттракционы для школьников.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">VR</span>
+                            <span class="listing-card__tag">Экскурсии</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-parks-thumb.jpg');"></div>
+                        <span class="listing-card__category">Дом-музей</span>
+                        <h3 class="listing-card__title">Усадьба инженера Курчатова</h3>
+                        <p class="listing-card__text">Аутентичные интерьеры, экскурсии о жизни ученых и тематические вечера.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Интерьер</span>
+                            <span class="listing-card__tag">Экскурсовод</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Наука</span>
+                        <h3 class="listing-card__title">Детский центр «Наука на Волге»</h3>
+                        <p class="listing-card__text">Мастер-классы, научные шоу и интерактивные лаборатории для детей и подростков.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">STEM</span>
+                            <span class="listing-card__tag">Kids</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-malls-thumb.jpg');"></div>
+                        <span class="listing-card__category">Экспозиция</span>
+                        <h3 class="listing-card__title">Музей судоходного канала</h3>
+                        <p class="listing-card__text">Мультимедиа о Волге, история строительства канала и коллекция судовых журналов.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Мультимедиа</span>
+                            <span class="listing-card__tag">История</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Интересные места Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero page-hero--places">
+            <div class="container page-hero__content">
+                <h1 class="page-hero__title">Где погулять в Балаково</h1>
+                <p class="page-hero__subtitle">От набережной до камерных арт-пространств — маршруты на любой вкус</p>
+                <a href="map.html" class="btn btn-primary page-hero__btn">Посмотреть карту города</a>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Интересные места</span>
+                    <h2 class="section-header__title">Выберите направление</h2>
+                    <p class="section-header__subtitle">Подготовили подборки для прогулок, гастрономических выходных, шопинга и отдыха на воде.</p>
+                </div>
+                <div class="places-filter">
+                    <a class="places-filter__link places-filter__link--active" href="places.html">Все категории</a>
+                    <a class="places-filter__link" href="places-parks.html">Парки и скверы</a>
+                    <a class="places-filter__link" href="places-restaurants.html">Рестораны</a>
+                    <a class="places-filter__link" href="places-theaters.html">Кинотеатры и театры</a>
+                    <a class="places-filter__link" href="places-museums.html">Музеи</a>
+                    <a class="places-filter__link" href="places-nature.html">Отдых на природе</a>
+                    <a class="places-filter__link" href="places-malls.html">Торговые центры</a>
+                    <a class="places-filter__link" href="places-hotels.html">Гостиницы</a>
+                    <a class="places-filter__link" href="places-beaches.html">Пляжи <span class="places-filter__tag">Лето</span></a>
+                    <a class="places-filter__link" href="places-fairs.html">Ярмарки и рынки</a>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-parks-thumb.jpg');"></div>
+                        <span class="listing-card__category">Парки и скверы</span>
+                        <h3 class="listing-card__title">Прогулки по зелёным маршрутам</h3>
+                        <p class="listing-card__text">Маршруты по набережной, парку им. Павлова и экотропе «Щербакова остров».</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Маршруты</span>
+                            <span class="listing-card__tag">Семья</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-restaurants-thumb.jpg');"></div>
+                        <span class="listing-card__category">Рестораны</span>
+                        <h3 class="listing-card__title">Гастрономический уикенд</h3>
+                        <p class="listing-card__text">Уютные кафе, видовые рестораны у воды и гастробары в центре города.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Авторская кухня</span>
+                            <span class="listing-card__tag">Локальные продукты</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-malls-thumb.jpg');"></div>
+                        <span class="listing-card__category">Культурные площадки</span>
+                        <h3 class="listing-card__title">Кинотеатры и театры</h3>
+                        <p class="listing-card__text">Премьеры, спектакли и open-air показы — всё для культурного вечера в Балаково.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Премьеры</span>
+                            <span class="listing-card__tag">Open-air</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Музеи</span>
+                        <h3 class="listing-card__title">Музеи и галереи</h3>
+                        <p class="listing-card__text">Исторические экспозиции, интерактивные выставки и арт-пространства для всей семьи.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Экспозиции</span>
+                            <span class="listing-card__tag">Арт</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-parks-thumb.jpg');"></div>
+                        <span class="listing-card__category">Природа</span>
+                        <h3 class="listing-card__title">Отдых на природе</h3>
+                        <p class="listing-card__text">Экотропы, базы на Волге и загородные пикниковые зоны для выхода из городской суеты.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Экотропы</span>
+                            <span class="listing-card__tag">Пикники</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-malls-thumb.jpg');"></div>
+                        <span class="listing-card__category">Торговые центры</span>
+                        <h3 class="listing-card__title">Шопинг и развлечения</h3>
+                        <p class="listing-card__text">Крупные ТРЦ с кинотеатрами, фуд-кортами и зонами развлечений для детей.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Кино</span>
+                            <span class="listing-card__tag">Розница</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-hotels-thumb.jpg');"></div>
+                        <span class="listing-card__category">Гостиницы</span>
+                        <h3 class="listing-card__title">Комфортное размещение</h3>
+                        <p class="listing-card__text">От бизнес-отелей до бутик-гостиниц на набережной.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Wi‑Fi</span>
+                            <span class="listing-card__tag">Конференц-залы</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Пляжи</span>
+                        <h3 class="listing-card__title">Летние пляжные зоны</h3>
+                        <p class="listing-card__text">Песчаные и благоустроенные пляжи с прокатом шезлонгов и спортивными площадками.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag listing-card__tag--summer">Сезон</span>
+                            <span class="listing-card__tag">Спорт</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Ярмарки и рынки</span>
+                        <h3 class="listing-card__title">Местные вкусы</h3>
+                        <p class="listing-card__text">Фермерские ярмарки, рынки с локальными продуктами и сувенирами.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Фермеры</span>
+                            <span class="listing-card__tag">Сувениры</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Маршруты</span>
+                    <h2 class="section-header__title">Маршруты для прогулок</h2>
+                    <p class="section-header__subtitle">Подборка открытых пространств Балаково для променада, видов на Волгу и неспешных встреч.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/balakovo-river-real.jpg');"></div>
+                        <span class="listing-card__category">Набережная</span>
+                        <h3 class="listing-card__title">Набережная и судоходный канал</h3>
+                        <p class="listing-card__text">Вечером на набережной оживает прогулочная зона: подсветка мостов, уличные музыканты и виды на Волгу.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Вид</span>
+                            <span class="listing-card__tag">Музыка</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-parks-thumb.jpg');"></div>
+                        <span class="listing-card__category">Парк</span>
+                        <h3 class="listing-card__title">Парк им. Павлова</h3>
+                        <p class="listing-card__text">Зелёный парк в центре города с прокатом самокатов, летними кафе и сценой для мероприятий.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Семья</span>
+                            <span class="listing-card__tag">Прокат</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Экотропа</span>
+                        <h3 class="listing-card__title">Эко-тропа «Щербакова остров»</h3>
+                        <p class="listing-card__text">Прогулка по натуральному ландшафту Волги: наблюдение за птицами, зоны для пикника и смотровые площадки.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Пикник</span>
+                            <span class="listing-card__tag">Природа</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="page-section page-section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Отдых</span>
+                    <h2 class="section-header__title">Для семейного отдыха</h2>
+                    <p class="section-header__subtitle">Знаковые места, где приятно провести выходной всей семьёй.</p>
+                </div>
+                <div class="listing-grid">
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-fairs-thumb.jpg');"></div>
+                        <span class="listing-card__category">Этнопарк</span>
+                        <h3 class="listing-card__title">Этнопарк «Покровский двор»</h3>
+                        <p class="listing-card__text">Интерактивные программы, фермерские ярмарки и мастер-классы для детей и взрослых.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Фермеры</span>
+                            <span class="listing-card__tag">Ремесло</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-beaches-thumb.jpg');"></div>
+                        <span class="listing-card__category">Каток / роллердром</span>
+                        <h3 class="listing-card__title">Городской каток</h3>
+                        <p class="listing-card__text">Зимой — ледовый каток, летом — роллердром под открытым небом.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Зима</span>
+                            <span class="listing-card__tag">Роллеры</span>
+                        </div>
+                    </article>
+                    <article class="listing-card">
+                        <div class="listing-card__image" style="background-image: url('img/places-restaurants-thumb.jpg');"></div>
+                        <span class="listing-card__category">Культура</span>
+                        <h3 class="listing-card__title">Дом культуры Балаково</h3>
+                        <p class="listing-card__text">Выставки, концерты и кинопоказы с участием местных артистов.</p>
+                        <div class="listing-card__meta">
+                            <span class="listing-card__tag">Концерты</span>
+                            <span class="listing-card__tag">Кино</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© 2025 Балаково. Все права защищены.</p>
+            <div class="social-links">
+                <a href="#" aria-label="VK">VK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
