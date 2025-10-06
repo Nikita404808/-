@@ -25,8 +25,27 @@ document.addEventListener('DOMContentLoaded', function () {
   const dropdownMenu = desktopDropdown ? desktopDropdown.querySelector('.dropdown-menu') : null;
   const extraNavItems = dropdownMenu ? Array.from(dropdownMenu.children) : [];
   const DESKTOP_BREAKPOINT = 768;
+  const burgerBtn = document.querySelector('.burger-btn');
+
+  const toggleMobileMenu = (shouldOpen) => {
+    if (!navList || !burgerBtn) {
+      return;
+    }
+
+    const nextState = typeof shouldOpen === 'boolean' ? shouldOpen : !navList.classList.contains('active');
+    burgerBtn.classList.toggle('active', nextState);
+    navList.classList.toggle('active', nextState);
+    document.body.classList.toggle('body--locked', nextState);
+    burgerBtn.setAttribute('aria-expanded', String(nextState));
+    burgerBtn.setAttribute('aria-label', nextState ? 'Закрыть меню' : 'Открыть меню');
+  };
+
+  const closeMobileMenu = () => {
+    toggleMobileMenu(false);
+  };
 
   // Переносим дополнительные пункты меню в зависимости от ширины экрана
+
   const moveExtraItems = () => {
     if (!navList || !dropdownMenu || !desktopDropdown) {
       return;
@@ -59,6 +78,10 @@ document.addEventListener('DOMContentLoaded', function () {
       menuElement.style.transform = 'translateX(-50%) translateY(-10px)';
       dropdownElement.classList.remove('active');
     });
+
+    if (isDesktop) {
+      closeMobileMenu();
+    }
   };
 
   moveExtraItems();
@@ -140,23 +163,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Бургер меню
-  const burgerBtn = document.querySelector('.burger-btn');
-
   if (burgerBtn && navList) {
-    burgerBtn.addEventListener('click', function() {
-      // Переключаем активное состояние бургер-кнопки
-      burgerBtn.classList.toggle('active');
+    toggleMobileMenu(false);
 
-      // Переключаем активное состояние меню
-      navList.classList.toggle('active');
+    burgerBtn.addEventListener('click', function() {
+      toggleMobileMenu();
     });
 
     // Закрываем меню при клике вне его области
     document.addEventListener('click', function(event) {
       if (!burgerBtn.contains(event.target) && !navList.contains(event.target)) {
-        burgerBtn.classList.remove('active');
-        navList.classList.remove('active');
+        closeMobileMenu();
       }
     });
 
@@ -164,8 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = navList.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
-        burgerBtn.classList.remove('active');
-        navList.classList.remove('active');
+        closeMobileMenu();
       });
     });
 
@@ -177,6 +193,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const dropdown = toggle.closest('.dropdown');
         dropdown.classList.toggle('active');
       });
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+      }
     });
   }
 
