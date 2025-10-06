@@ -196,6 +196,462 @@ document.addEventListener('DOMContentLoaded', function () {
   updateHeaderState();
   window.addEventListener('scroll', updateHeaderState, { passive: true });
 
+  const eventsFeedElement = document.querySelector('[data-events-feed]');
+
+  if (eventsFeedElement) {
+    const eventsListElement = eventsFeedElement.querySelector('[data-events-list]');
+    const eventsStatusElement = eventsFeedElement.querySelector('[data-events-status]');
+    const moreLinkElement = eventsFeedElement.querySelector('[data-events-more]');
+    const skeletonSelectors = '[data-skeleton]';
+
+    const AFISHA_ENDPOINT = 'https://afisha.yandex.ru/api/events/nearby?city=balakovo&limit=6';
+    const AFISHA_FALLBACK_URL = moreLinkElement ? moreLinkElement.href : 'https://afisha.yandex.ru/balakovo';
+
+    const clearSkeletons = () => {
+      if (!eventsListElement) {
+        return;
+      }
+      eventsListElement.querySelectorAll(skeletonSelectors).forEach((skeleton) => skeleton.remove());
+    };
+
+    const toDate = (value) => {
+      if (!value && value !== 0) {
+        return null;
+      }
+
+      if (value instanceof Date) {
+        return Number.isNaN(value.getTime()) ? null : value;
+      }
+
+      if (typeof value === 'number') {
+        const timestamp = value > 1e12 ? value : value * 1000;
+        const date = new Date(timestamp);
+        return Number.isNaN(date.getTime()) ? null : date;
+      }
+
+      if (typeof value === 'string') {
+        const date = new Date(value);
+        if (!Number.isNaN(date.getTime())) {
+          return date;
+        }
+
+        // Попытка разобрать строку формата `2024-03-20 19:00`
+        const normalized = value.replace(' ', 'T');
+        const dateWithTimezone = new Date(`${normalized}+03:00`);
+        return Number.isNaN(dateWithTimezone.getTime()) ? null : dateWithTimezone;
+      }
+
+      return null;
+    };
+
+    const pickText = (...candidates) => {
+      for (let index = 0; index < candidates.length; index += 1) {
+        const candidate = candidates[index];
+        if (!candidate) {
+          continue;
+        }
+
+        if (typeof candidate === 'string' && candidate.trim()) {
+          return candidate.trim();
+        }
+
+        if (typeof candidate === 'number' && !Number.isNaN(candidate)) {
+          return String(candidate);
+        }
+
+        if (Array.isArray(candidate)) {
+          const nested = pickText(...candidate);
+          if (nested) {
+            return nested;
+          }
+        } else if (typeof candidate === 'object') {
+          const nested = pickText(candidate.text, candidate.subtitle, candidate.description, candidate.value, candidate.title, candidate.name);
+          if (nested) {
+            return nested;
+          }
+        }
+      }
+
+      return '';
+    };
+
+    const formatDateRange = (start, end) => {
+      if (!start) {
+        return '';
+      }
+
+      const dateFormatter = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long' });
+      const timeFormatter = new Intl.DateTimeFormat('ru-RU', { hour: '2-digit', minute: '2-digit' });
+      const startDatePart = dateFormatter.format(start);
+      const startTimePart = timeFormatter.format(start);
+
+      if (!end || start.toDateString() === end.toDateString()) {
+        return `${startDatePart}, ${startTimePart}`;
+      }
+
+      const endDatePart = dateFormatter.format(end);
+      const endTimePart = timeFormatter.format(end);
+      return `${startDatePart}, ${startTimePart} — ${endDatePart}, ${endTimePart}`;
+    };
+
+    const extractDates = (rawEvent) => {
+      const startCandidates = [];
+      const endCandidates = [];
+
+      if (rawEvent) {
+        startCandidates.push(rawEvent.start, rawEvent.startAt, rawEvent.start_date, rawEvent.startDate, rawEvent.date, rawEvent.begin, rawEvent.time);
+        endCandidates.push(rawEvent.end, rawEvent.endAt, rawEvent.end_date, rawEvent.endDate, rawEvent.finish, rawEvent.finish_at);
+
+        if (Array.isArray(rawEvent.dates)) {
+          rawEvent.dates.forEach((dateItem) => {
+            startCandidates.push(dateItem.start, dateItem.startDate, dateItem.start_time, dateItem.start_datetime);
+            endCandidates.push(dateItem.end, dateItem.endDate, dateItem.end_time, dateItem.end_datetime);
+          });
+        }
+
+        if (Array.isArray(rawEvent.sessions)) {
+          rawEvent.sessions.forEach((sessionItem) => {
+            startCandidates.push(sessionItem.start, sessionItem.startAt, sessionItem.start_time, sessionItem.begin_time, sessionItem.time_start);
+            endCandidates.push(sessionItem.end, sessionItem.endAt, sessionItem.end_time, sessionItem.time_end);
+          });
+        }
+
+        if (rawEvent.session) {
+          startCandidates.push(rawEvent.session.start, rawEvent.session.start_time);
+          endCandidates.push(rawEvent.session.end, rawEvent.session.end_time);
+        }
+
+        if (rawEvent.scheduleInfo) {
+          startCandidates.push(rawEvent.scheduleInfo.startAt, rawEvent.scheduleInfo.start);
+          endCandidates.push(rawEvent.scheduleInfo.endAt, rawEvent.scheduleInfo.end);
+        }
+      }
+
+      const startDate = startCandidates.map(toDate).find(Boolean) || null;
+      const endDate = endCandidates.map(toDate).find(Boolean) || null;
+
+      return { startDate, endDate };
+    };
+
+    const extractImage = (rawEvent) => {
+      const imageCandidates = [
+        rawEvent?.image?.url,
+        rawEvent?.image?.sizes?.large,
+        rawEvent?.cover?.url,
+        rawEvent?.poster?.image?.url,
+        rawEvent?.poster?.url,
+        rawEvent?.logo?.url,
+      ];
+
+      const imageUrl = imageCandidates.find((candidate) => typeof candidate === 'string' && candidate.startsWith('http'));
+      const altText = pickText(rawEvent?.image?.alt, rawEvent?.title, rawEvent?.name);
+
+      if (!imageUrl) {
+        return null;
+      }
+
+      return { url: imageUrl, alt: altText || 'Афиша события' };
+    };
+
+    const normalizeEvent = (rawEvent) => {
+      const title = pickText(rawEvent?.title, rawEvent?.name, rawEvent?.shortTitle, rawEvent?.header) || 'Событие';
+      const description = pickText(
+        rawEvent?.subtitle,
+        rawEvent?.description,
+        rawEvent?.teaser,
+        rawEvent?.announce,
+        rawEvent?.scheduleInfo?.text,
+        rawEvent?.shortDescription,
+      );
+
+      const place = rawEvent?.place || rawEvent?.location || rawEvent?.venue || {};
+      const location = pickText(place.title, place.name, place.address?.text, place.address, rawEvent?.address);
+
+      const priceText = pickText(
+        rawEvent?.priceText,
+        rawEvent?.price,
+        rawEvent?.priceRange,
+        rawEvent?.cost,
+        rawEvent?.tickets?.price,
+        rawEvent?.tickets?.text,
+      );
+
+      const rawTags = rawEvent?.tags || rawEvent?.genres || rawEvent?.categories || rawEvent?.rubrics || [];
+      const tags = Array.isArray(rawTags)
+        ? rawTags
+          .map((tag) => pickText(tag?.title, tag?.name, tag))
+          .filter((tag) => tag && tag.length <= 22)
+          .slice(0, 3)
+        : [];
+
+      const linkCandidates = [
+        rawEvent?.url,
+        rawEvent?.link,
+        rawEvent?.event_url,
+        rawEvent?.shareUrl,
+        rawEvent?.pageUrl,
+        (rawEvent?.slug ? `/balakovo/${rawEvent.slug}` : null),
+        rawEvent?.sessions && rawEvent.sessions[0]?.url,
+        rawEvent?.session?.url,
+      ].filter(Boolean);
+
+      let link = linkCandidates.find((candidate) => typeof candidate === 'string' && candidate.trim());
+      if (link && link.startsWith('/')) {
+        link = `https://afisha.yandex.ru${link}`;
+      }
+      if (!link) {
+        link = AFISHA_FALLBACK_URL;
+      }
+
+      const { startDate, endDate } = extractDates(rawEvent);
+      const dateText = formatDateRange(startDate, endDate) || pickText(rawEvent?.scheduleInfo?.text, rawEvent?.when, rawEvent?.time_text);
+
+      const image = extractImage(rawEvent);
+
+      return {
+        title,
+        description,
+        location,
+        priceText,
+        tags,
+        link,
+        startDate,
+        endDate,
+        dateText,
+        image,
+      };
+    };
+
+    const renderEventCard = (eventInfo) => {
+      const cardElement = document.createElement('article');
+      cardElement.className = 'events-feed__card';
+      cardElement.setAttribute('role', 'article');
+
+      const mediaElement = document.createElement('div');
+      mediaElement.className = 'events-feed__media';
+      if (eventInfo.image) {
+        const imageElement = document.createElement('img');
+        imageElement.src = eventInfo.image.url;
+        imageElement.alt = eventInfo.image.alt;
+        imageElement.loading = 'lazy';
+        mediaElement.appendChild(imageElement);
+      }
+      cardElement.appendChild(mediaElement);
+
+      const bodyElement = document.createElement('div');
+      bodyElement.className = 'events-feed__body';
+
+      if (eventInfo.dateText) {
+        const dateElement = document.createElement('span');
+        dateElement.className = 'events-feed__date';
+        dateElement.textContent = eventInfo.dateText;
+        bodyElement.appendChild(dateElement);
+      }
+
+      const titleElement = document.createElement('h3');
+      titleElement.className = 'events-feed__card-title';
+      titleElement.textContent = eventInfo.title;
+      bodyElement.appendChild(titleElement);
+
+      if (eventInfo.description) {
+        const descriptionElement = document.createElement('p');
+        descriptionElement.className = 'events-feed__description';
+        descriptionElement.textContent = eventInfo.description;
+        bodyElement.appendChild(descriptionElement);
+      }
+
+      const metaContainer = document.createElement('div');
+      metaContainer.className = 'events-feed__meta';
+
+      if (eventInfo.location) {
+        const locationElement = document.createElement('span');
+        locationElement.className = 'events-feed__meta-item';
+        locationElement.textContent = eventInfo.location;
+        metaContainer.appendChild(locationElement);
+      }
+
+      if (eventInfo.priceText) {
+        const priceElement = document.createElement('span');
+        priceElement.className = 'events-feed__meta-item';
+        priceElement.textContent = eventInfo.priceText;
+        metaContainer.appendChild(priceElement);
+      }
+
+      if (eventInfo.tags?.length) {
+        eventInfo.tags.forEach((tag) => {
+          const tagElement = document.createElement('span');
+          tagElement.className = 'events-feed__meta-item';
+          tagElement.textContent = tag;
+          metaContainer.appendChild(tagElement);
+        });
+      }
+
+      if (metaContainer.childElementCount) {
+        bodyElement.appendChild(metaContainer);
+      }
+
+      const linkElement = document.createElement('a');
+      linkElement.className = 'events-feed__link';
+      linkElement.href = eventInfo.link;
+      linkElement.target = '_blank';
+      linkElement.rel = 'noopener';
+      linkElement.setAttribute('aria-label', `Перейти к событию «${eventInfo.title}» на Яндекс.Афише`);
+      linkElement.textContent = 'Подробнее';
+      bodyElement.appendChild(linkElement);
+
+      cardElement.appendChild(bodyElement);
+      return cardElement;
+    };
+
+    const renderEvents = (events) => {
+      clearSkeletons();
+      if (!eventsListElement) {
+        return;
+      }
+      eventsListElement.innerHTML = '';
+      events.forEach((eventInfo) => {
+        eventsListElement.appendChild(renderEventCard(eventInfo));
+      });
+    };
+
+    const showFallback = (message) => {
+      clearSkeletons();
+      if (!eventsListElement) {
+        return;
+      }
+      eventsListElement.innerHTML = '';
+      const fallbackElement = document.createElement('div');
+      fallbackElement.className = 'events-feed__empty';
+      fallbackElement.innerHTML = `<strong>Не удалось загрузить афишу</strong><span>${message}</span>`;
+      eventsListElement.appendChild(fallbackElement);
+      if (eventsStatusElement) {
+        eventsStatusElement.hidden = false;
+        eventsStatusElement.textContent = 'Попробуйте открыть афишу на Яндексе — ссылка выше.';
+      }
+    };
+
+    const parseResponse = (payload) => {
+      if (!payload) {
+        return [];
+      }
+
+      if (Array.isArray(payload)) {
+        return payload;
+      }
+
+      if (Array.isArray(payload?.data)) {
+        return payload.data;
+      }
+
+      if (Array.isArray(payload?.events)) {
+        return payload.events;
+      }
+
+      if (Array.isArray(payload?.items)) {
+        return payload.items;
+      }
+
+      if (payload?.result && Array.isArray(payload.result.events)) {
+        return payload.result.events;
+      }
+
+      return [];
+    };
+
+    const parseJsonFromText = (response) => response.text().then((text) => {
+      if (!text) {
+        throw new Error('Пустой ответ афиши');
+      }
+      try {
+        return JSON.parse(text);
+      } catch (error) {
+        throw new Error(`Не удалось распарсить ответ: ${error.message}`);
+      }
+    });
+
+    const fetchAfisha = () => {
+      const attemptDescriptors = [
+        {
+          label: 'direct',
+          url: AFISHA_ENDPOINT,
+          parser: (response) => response.json(),
+        },
+        {
+          label: 'jina',
+          url: `https://r.jina.ai/${AFISHA_ENDPOINT}`,
+          parser: (response) => parseJsonFromText(response),
+        },
+        {
+          label: 'allorigins',
+          url: `https://api.allorigins.win/raw?url=${encodeURIComponent(AFISHA_ENDPOINT)}`,
+          parser: (response) => parseJsonFromText(response),
+        },
+        {
+          label: 'thingproxy',
+          url: `https://thingproxy.freeboard.io/fetch/${AFISHA_ENDPOINT}`,
+          parser: (response) => parseJsonFromText(response),
+        },
+      ];
+
+      const tryFetch = (index) => {
+        if (index >= attemptDescriptors.length) {
+          return Promise.reject(new Error('Все доступные источники афиши недоступны.'));
+        }
+
+        const descriptor = attemptDescriptors[index];
+        return fetch(descriptor.url, {
+          headers: {
+            Accept: 'application/json, text/plain, */*',
+          },
+          mode: 'cors',
+          credentials: 'omit',
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Ответ ${descriptor.label}: ${response.status}`);
+            }
+            return descriptor.parser(response);
+          })
+          .then((payload) => ({ payload, source: descriptor.label }))
+          .catch((error) => {
+            console.warn(`Афиша: попытка ${descriptor.label} не удалась`, error);
+            return tryFetch(index + 1);
+          });
+      };
+
+      return tryFetch(0);
+    };
+
+    Promise.resolve()
+      .then(() => fetchAfisha())
+      .then(({ payload, source }) => {
+        const rawEvents = parseResponse(payload);
+        if (!rawEvents.length) {
+          throw new Error('Пустой список событий');
+        }
+
+        const normalizedEvents = rawEvents
+          .slice(0, 6)
+          .map((event) => normalizeEvent(event));
+
+        renderEvents(normalizedEvents);
+        if (eventsStatusElement) {
+          const statusMessages = {
+            direct: 'Данные подгружены напрямую из Яндекс-Афиши.',
+            jina: 'Данные загружены через зеркальный источник (r.jina.ai).',
+            allorigins: 'Данные загружены через публичное зеркало, возможна задержка обновления.',
+            thingproxy: 'Данные загружены через резервное зеркало, возможна задержка обновления.',
+          };
+          eventsStatusElement.hidden = false;
+          eventsStatusElement.textContent = statusMessages[source] || 'Данные подгружаются из Яндекс-Афиши.';
+        }
+      })
+      .catch((error) => {
+        console.error('Не удалось загрузить афишу Яндекса', error);
+        showFallback('Мы уже работаем над тем, чтобы вернуть события на страницу. Пока что перейдите на Яндекс-Афишу.');
+      });
+  }
+
   const MAP_DEFAULT = { lat: 52.026816, lon: 47.560975, zoom: 12 };
   const MAP_FOCUS_STORAGE_KEY = 'balakovo:mapFocus';
   const MAP_SEARCH_REGION = 'Балаково, Саратовская область';

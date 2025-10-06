@@ -90,6 +90,81 @@ body {
     color: #005A9C; /* темно-синий */
 }
 
+/* MAX блок */
+.max-integration {
+    background: #007ACC;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 28px 60px rgba(0, 40, 85, 0.28);
+}
+
+.max-integration::before,
+.max-integration::after {
+    opacity: 0;
+}
+
+/* Афиша мероприятий */
+.events-feed {
+    background: linear-gradient(155deg, rgba(0, 122, 204, 0.18), rgba(0, 66, 126, 0.18));
+}
+
+.events-feed__eyebrow {
+    color: rgba(255, 215, 0, 0.85);
+}
+
+.events-feed__eyebrow::before {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(73, 161, 255, 0.85));
+}
+
+.events-feed__title {
+    color: #FFFFFF;
+}
+
+.events-feed__subtitle {
+    color: rgba(248, 250, 255, 0.85);
+}
+
+.events-feed__card {
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 26px 60px rgba(0, 40, 85, 0.24);
+}
+
+.events-feed__date {
+    color: rgba(0, 62, 121, 0.65);
+}
+
+.events-feed__card-title {
+    color: #005A9C;
+}
+
+.events-feed__description {
+    color: rgba(0, 62, 121, 0.78);
+}
+
+.events-feed__meta-item {
+    background: rgba(0, 122, 204, 0.12);
+    color: rgba(0, 62, 121, 0.8);
+}
+
+.events-feed__link {
+    color: #005A9C;
+}
+
+.events-feed__status {
+    color: rgba(248, 250, 255, 0.65);
+}
+
+.events-feed__all {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.18), rgba(73, 161, 255, 0.16));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #005A9C;
+    box-shadow: 0 20px 40px rgba(0, 40, 85, 0.22);
+}
+
+.events-feed__all:hover,
+.events-feed__all:focus-visible {
+    box-shadow: 0 26px 52px rgba(0, 40, 85, 0.28);
+}
+
 /* Футер */
 .footer {
     background: var(--balakovo-primary-gradient);
