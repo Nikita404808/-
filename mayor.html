@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мэрия Балаково</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-balakovo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="logo">
+                <a href="index.html" aria-label="На главную">
+                    <img src="img/ChatGPT Image 19 сент. 2025 г., 13_35_12.png" alt="Логотип Балаково" />
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="burger-btn" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav__list">
+                    <li><a href="about.html">О городе</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="places.html">Интересные места</a></li>
+                    <li><a href="infrastructure.html">Инфраструктура</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Ещё ▾</a>
+                        <ul class="dropdown-menu">
+                            <li class="extra-nav-item"><a href="media.html">Фото и видео</a></li>
+                            <li class="extra-nav-item"><a href="education.html">Учебные заведения</a></li>
+                            <li class="extra-nav-item"><a href="map.html">Карта города</a></li>
+                            <li class="extra-nav-item"><a href="mayor.html">Мэрия</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="mayor-hero page-hero page-hero--split">
+            <div class="container page-hero__content page-hero__content--split">
+                <div class="page-hero__text">
+                    <span class="page-hero__eyebrow">Администрация города</span>
+                    <h1 class="page-hero__title">Команда мэрии Балаково</h1>
+                    <p class="page-hero__subtitle">Здесь собраны руководители городской администрации, контакты департаментов и направления работы. Узнайте, какая команда развивает город ежедневно и как с ней связаться.</p>
+                    <div class="page-hero__cta-group">
+                        <a href="#leadership" class="btn btn-primary page-hero__btn">Руководство</a>
+                        <a href="#departments" class="page-hero__link">Департаменты и службы</a>
+                    </div>
+                </div>
+                <div class="page-hero__highlights mayor-hero__highlights">
+                    <div class="page-hero__highlight-card">
+                        <h3>8</h3>
+                        <p>ключевых департаментов, отвечающих за развитие инфраструктуры и сервисов.</p>
+                    </div>
+                    <div class="page-hero__highlight-card">
+                        <h3>24/7</h3>
+                        <p>дежурная служба администрации работает круглосуточно и принимает обращения жителей.</p>
+                    </div>
+                    <div class="page-hero__highlight-card">
+                        <h3>3</h3>
+                        <p>приёмных дня у мэра и его заместителей каждую неделю.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="leadership" class="mayor-team page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Руководство</span>
+                    <h2 class="section-header__title">Лица городской администрации</h2>
+                    <p class="section-header__subtitle">Знакомьтесь с командой, которая отвечает за стратегию развития Балаково и ежедневную работу городской системы управления.</p>
+                </div>
+                <div class="mayor-team__grid">
+                    <article class="mayor-card">
+                        <div class="mayor-card__photo" aria-hidden="true" style="--avatar-from:#2563eb; --avatar-to:#38bdf8;">СГ</div>
+                        <div class="mayor-card__body">
+                            <h3 class="mayor-card__name">Сергей Грачёв</h3>
+                            <p class="mayor-card__role">Мэр города Балаково</p>
+                            <ul class="mayor-card__meta">
+                                <li>Приём граждан: вторник и четверг, 10:00–13:00</li>
+                                <li>Телефон приёмной: +7 (8453) 00‑01‑01</li>
+                                <li><a href="mailto:mayor@balakovo.city">mayor@balakovo.city</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="mayor-card">
+                        <div class="mayor-card__photo" aria-hidden="true" style="--avatar-from:#9333ea; --avatar-to:#ec4899;">МК</div>
+                        <div class="mayor-card__body">
+                            <h3 class="mayor-card__name">Марина Коваль</h3>
+                            <p class="mayor-card__role">Первый заместитель по социальному развитию</p>
+                            <ul class="mayor-card__meta">
+                                <li>Отвечает за образование, здравоохранение и культуру</li>
+                                <li>Телефон: +7 (8453) 00‑02‑32</li>
+                                <li><a href="mailto:social@balakovo.city">social@balakovo.city</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="mayor-card">
+                        <div class="mayor-card__photo" aria-hidden="true" style="--avatar-from:#0ea5e9; --avatar-to:#14b8a6;">ДА</div>
+                        <div class="mayor-card__body">
+                            <h3 class="mayor-card__name">Дмитрий Акимов</h3>
+                            <p class="mayor-card__role">Заместитель по инфраструктуре и транспорту</p>
+                            <ul class="mayor-card__meta">
+                                <li>Куратор дорожных проектов и городской мобильности</li>
+                                <li>Телефон: +7 (8453) 00‑03‑45</li>
+                                <li><a href="mailto:infra@balakovo.city">infra@balakovo.city</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="mayor-card">
+                        <div class="mayor-card__photo" aria-hidden="true" style="--avatar-from:#f97316; --avatar-to:#facc15;">ГВ</div>
+                        <div class="mayor-card__body">
+                            <h3 class="mayor-card__name">Галина Воробьёва</h3>
+                            <p class="mayor-card__role">Главный архитектор и руководитель департамента развития среды</p>
+                            <ul class="mayor-card__meta">
+                                <li>Отвечает за благоустройство дворов и общественных пространств</li>
+                                <li>Телефон: +7 (8453) 00‑04‑28</li>
+                                <li><a href="mailto:design@balakovo.city">design@balakovo.city</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="departments" class="mayor-departments page-section page-section--alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-header__label">Департаменты</span>
+                    <h2 class="section-header__title">Чем занимается администрация</h2>
+                    <p class="section-header__subtitle">Каждый департамент сфокусирован на отдельном направлении: от цифровых сервисов до ЖКХ. Ниже — краткое описание и основные каналы связи.</p>
+                </div>
+                <div class="mayor-departments__grid">
+                    <article class="mayor-department">
+                        <h3>Цифровое развитие</h3>
+                        <p>Разработка городских сервисов, поддержка портала обращений и внедрение умной инфраструктуры.</p>
+                        <ul>
+                            <li>Руководитель: Павел Фёдоров</li>
+                            <li>Телефон: +7 (8453) 00‑07‑12</li>
+                            <li>Email: <a href="mailto:digital@balakovo.city">digital@balakovo.city</a></li>
+                        </ul>
+                    </article>
+                    <article class="mayor-department">
+                        <h3>Благоустройство и ЖКХ</h3>
+                        <p>Контроль за ремонтом дорог, уходом за зелёными зонами и качеством коммунальных услуг.</p>
+                        <ul>
+                            <li>Руководитель: Иван Никифоров</li>
+                            <li>Телефон: +7 (8453) 00‑05‑81</li>
+                            <li>Email: <a href="mailto:urban@balakovo.city">urban@balakovo.city</a></li>
+                        </ul>
+                    </article>
+                    <article class="mayor-department">
+                        <h3>Экономика и инвестиции</h3>
+                        <p>Развитие малого бизнеса, привлечение инвесторов и сопровождение индустриальных проектов.</p>
+                        <ul>
+                            <li>Руководитель: Анастасия Литвинова</li>
+                            <li>Телефон: +7 (8453) 00‑06‑24</li>
+                            <li>Email: <a href="mailto:invest@balakovo.city">invest@balakovo.city</a></li>
+                        </ul>
+                    </article>
+                    <article class="mayor-department">
+                        <h3>Социальные инициативы</h3>
+                        <p>Поддержка общественных проектов, волонтёрских программ и работы с НКО.</p>
+                        <ul>
+                            <li>Руководитель: Екатерина Соколова</li>
+                            <li>Телефон: +7 (8453) 00‑08‑93</li>
+                            <li>Email: <a href="mailto:society@balakovo.city">society@balakovo.city</a></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="mayor-visit page-section">
+            <div class="container mayor-visit__inner">
+                <div class="mayor-visit__content">
+                    <span class="mayor-visit__label">Как попасть на приём</span>
+                    <h2 class="mayor-visit__title">Запишитесь онлайн или посетите общественную приёмную</h2>
+                    <p>Онлайн-запись доступна в любой день: выберите специалиста, время и тему обращения. Для срочных вопросов работает дежурная линия и очная приёмная в здании администрации.</p>
+                    <div class="mayor-visit__links">
+                        <a class="btn btn-primary" href="mailto:hello@balakovo.city">Записаться на приём</a>
+                        <a class="mayor-visit__phone" href="tel:+78453000223">Дежурная линия: +7 (8453) 00‑02‑23</a>
+                    </div>
+                </div>
+                <aside class="mayor-visit__meta">
+                    <div class="mayor-visit__item">
+                        <span class="mayor-visit__item-label">Адрес</span>
+                        <p>Балаково, пр. Героев, 52</p>
+                    </div>
+                    <div class="mayor-visit__item">
+                        <span class="mayor-visit__item-label">График приёмной</span>
+                        <p>Пн–Чт 09:00–18:00, Пт 09:00–17:00</p>
+                    </div>
+                    <div class="mayor-visit__item">
+                        <span class="mayor-visit__item-label">Документы</span>
+                        <p><a href="#">Заявление на приём</a>, <a href="#">FAQ по обращениям</a></p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+        <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a class="footer__logo" href="index.html" aria-label="На главную">Балаково</a>
+                    <span class="footer__tagline">Город у Волги. Энергия развития.</span>
+                    <div class="footer__badges">
+                        <span class="footer__badge">Путеводитель</span>
+                        <span class="footer__badge">История</span>
+                        <span class="footer__badge">Маршруты</span>
+                    </div>
+                    <p class="footer__creators">Создатели сайта: команда проекта «Балаково Digital».</p>
+                </div>
+                <nav class="footer__nav" aria-label="Основные разделы">
+                    <p class="footer__nav-title">Разделы</p>
+                    <ul class="footer__menu">
+                        <li><a href="about.html">О городе</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="places.html">Интересные места</a></li>
+                        <li><a href="infrastructure.html">Инфраструктура</a></li>
+                        <li><a href="media.html">Фото и видео</a></li>
+                        <li><a href="education.html">Учебные заведения</a></li>
+                        <li><a href="map.html">Карта города</a></li>
+                        <li><a href="mayor.html">Мэрия</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__actions">
+                    <p class="footer__actions-title">Мы на связи</p>
+                    <p class="footer__actions-note">Следите за новостями города и делитесь впечатлениями.</p>
+                    <div class="footer__social" aria-label="Социальные сети">
+                        <a class="footer__social-link footer__social-link--vk" href="#" aria-label="ВКонтакте">
+                            <span class="visually-hidden">ВКонтакте</span>
+                            <img src="img/icons/vk-logo.png" class="footer__social-icon" alt="" aria-hidden="true" loading="lazy">
+                        </a>
+                        <a class="footer__social-link footer__social-link--tg" href="#" aria-label="Telegram">
+                            <span class="visually-hidden">Telegram</span>
+                            <img src="img/icons/icons8-телеграм.gif" class="footer__social-icon" alt="" aria-hidden="true" loading="lazy">
+                        </a>
+                        <a class="footer__social-link footer__social-link--max" href="#" aria-label="MAX Messenger">
+                            <span class="visually-hidden">MAX Messenger</span>
+                            <img src="img/icons/max-messenger-sign-logo.png" class="footer__social-icon" alt="" aria-hidden="true" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__bottom-text">© 2025 Балаково. Все права защищены.</p>
+                <a class="footer__bottom-link" href="mailto:info@balakovo.ru">info@balakovo.ru</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
