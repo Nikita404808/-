@@ -26,18 +26,44 @@ document.addEventListener('DOMContentLoaded', function () {
   const extraNavItems = dropdownMenu ? Array.from(dropdownMenu.children) : [];
   const DESKTOP_BREAKPOINT = 768;
   const burgerBtn = document.querySelector('.burger-btn');
+  let scrollLockPosition = 0;
+  const navWrapper = burgerBtn ? burgerBtn.closest('.nav') : null;
+  let closeMenuBtn = null;
+
+  if (navWrapper) {
+    closeMenuBtn = document.createElement('button');
+    closeMenuBtn.type = 'button';
+    closeMenuBtn.className = 'nav__close';
+    closeMenuBtn.setAttribute('aria-label', 'Закрыть меню');
+    closeMenuBtn.innerHTML = '<span></span><span></span>';
+    navWrapper.appendChild(closeMenuBtn);
+  }
 
   const toggleMobileMenu = (shouldOpen) => {
     if (!navList || !burgerBtn) {
       return;
     }
 
-    const nextState = typeof shouldOpen === 'boolean' ? shouldOpen : !navList.classList.contains('active');
+    const wasOpen = navList.classList.contains('active');
+    const nextState = typeof shouldOpen === 'boolean' ? shouldOpen : !wasOpen;
     burgerBtn.classList.toggle('active', nextState);
+    burgerBtn.classList.toggle('burger-btn--hidden', nextState);
     navList.classList.toggle('active', nextState);
     document.body.classList.toggle('body--locked', nextState);
     burgerBtn.setAttribute('aria-expanded', String(nextState));
     burgerBtn.setAttribute('aria-label', nextState ? 'Закрыть меню' : 'Открыть меню');
+    if (closeMenuBtn) {
+      closeMenuBtn.classList.toggle('nav__close--visible', nextState);
+    }
+
+    if (nextState) {
+      scrollLockPosition = window.scrollY || document.documentElement.scrollTop || 0;
+      document.body.style.top = `-${scrollLockPosition}px`;
+    } else if (wasOpen) {
+      document.body.style.top = '';
+      window.scrollTo(0, scrollLockPosition);
+      scrollLockPosition = 0;
+    }
   };
 
   const closeMobileMenu = () => {
@@ -170,6 +196,12 @@ document.addEventListener('DOMContentLoaded', function () {
       toggleMobileMenu();
     });
 
+    if (closeMenuBtn) {
+      closeMenuBtn.addEventListener('click', function() {
+        closeMobileMenu();
+      });
+    }
+
     // Закрываем меню при клике вне его области
     document.addEventListener('click', function(event) {
       if (!burgerBtn.contains(event.target) && !navList.contains(event.target)) {
@@ -226,8 +258,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const moreLinkElement = eventsFeedElement.querySelector('[data-events-more]');
     const skeletonSelectors = '[data-skeleton]';
 
-    const AFISHA_ENDPOINT = 'https://afisha.yandex.ru/api/events/nearby?city=balakovo&limit=6';
-    const AFISHA_FALLBACK_URL = moreLinkElement ? moreLinkElement.href : 'https://afisha.yandex.ru/balakovo';
+    const globalConfig = typeof window !== 'undefined' ? window : {};
+    const defaultFallbackUrl = moreLinkElement ? moreLinkElement.href : 'https://afisha.yandex.ru/balakovo';
+
+    const AFISHA_ENDPOINT = typeof globalConfig.AFISHA_ENDPOINT === 'string' && globalConfig.AFISHA_ENDPOINT.trim()
+      ? globalConfig.AFISHA_ENDPOINT.trim()
+      : 'https://afisha.yandex.ru/api/events/nearby?city=balakovo&limit=6';
+
+    const AFISHA_FALLBACK_URL = typeof globalConfig.AFISHA_FALLBACK_URL === 'string' && globalConfig.AFISHA_FALLBACK_URL.trim()
+      ? globalConfig.AFISHA_FALLBACK_URL.trim()
+      : defaultFallbackUrl;
 
     const clearSkeletons = () => {
       if (!eventsListElement) {
