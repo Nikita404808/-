@@ -1302,6 +1302,240 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   };
 
+  const initMediaAlbumLightbox = () => {
+    const albumCards = Array.from(document.querySelectorAll('.media-album'));
+    const lightbox = document.querySelector('.media-lightbox');
+
+    if (!albumCards.length || !lightbox) {
+      return;
+    }
+
+    const body = document.body;
+    const albumCache = new Map();
+
+    const imageEl = lightbox.querySelector('.media-lightbox__image');
+    const captionEl = lightbox.querySelector('.media-lightbox__caption');
+    const prevBtn = lightbox.querySelector('.media-lightbox__nav--prev');
+    const nextBtn = lightbox.querySelector('.media-lightbox__nav--next');
+    const thumbnailsRoot = lightbox.querySelector('.media-lightbox__thumbnails');
+    const closeTriggers = lightbox.querySelectorAll('[data-lightbox-close]');
+
+    if (!imageEl || !captionEl || !prevBtn || !nextBtn || !thumbnailsRoot) {
+      return;
+    }
+
+    const state = {
+      items: [],
+      index: 0,
+      albumId: null,
+      focusReturnEl: null,
+      albumTitle: ''
+    };
+
+    const getAlbumTitle = (albumEl) => {
+      const titleEl = albumEl.querySelector('.media-album__title');
+      return titleEl ? titleEl.textContent.trim() : 'Фото Балаково';
+    };
+
+    const parseAlbumSlides = (albumEl) => {
+      const slug = albumEl.dataset.album || `album-${albumCache.size + 1}`;
+
+      if (albumCache.has(slug)) {
+        return albumCache.get(slug);
+      }
+
+      const raw = albumEl.dataset.gallery;
+      let slides = [];
+
+      if (raw) {
+        try {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed)) {
+            slides = parsed.filter((item) => item && typeof item.src === 'string' && item.src.trim().length > 0)
+              .map((item) => ({
+                src: item.src.trim(),
+                caption: typeof item.caption === 'string' ? item.caption.trim() : ''
+              }));
+          }
+        } catch (error) {
+          console.warn('Не удалось распарсить изображения альбома', error, albumEl);
+        }
+      }
+
+      if (!slides.length) {
+        const fallbackImage = albumEl.querySelector('.media-album__cover img');
+        if (fallbackImage) {
+          slides = [{
+            src: fallbackImage.currentSrc || fallbackImage.src,
+            caption: fallbackImage.alt || getAlbumTitle(albumEl)
+          }];
+        }
+      }
+
+      albumCache.set(slug, slides);
+      return slides;
+    };
+
+    const updateNavAvailability = () => {
+      const hasMultiple = state.items.length > 1;
+      prevBtn.disabled = !hasMultiple;
+      nextBtn.disabled = !hasMultiple;
+    };
+
+    const updateActiveThumbnail = () => {
+      const thumbButtons = thumbnailsRoot.querySelectorAll('.media-lightbox__thumb');
+      thumbButtons.forEach((thumb) => {
+        const thumbIndex = Number.parseInt(thumb.dataset.index || '-1', 10);
+        thumb.classList.toggle('is-active', thumbIndex === state.index);
+        if (thumbIndex === state.index) {
+          thumb.setAttribute('aria-current', 'true');
+        } else {
+          thumb.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    const showSlide = (index) => {
+      if (!state.items.length) {
+        return;
+      }
+
+      const total = state.items.length;
+      const normalizedIndex = ((index % total) + total) % total;
+      state.index = normalizedIndex;
+
+      const current = state.items[state.index];
+      imageEl.src = current.src;
+      imageEl.alt = current.caption || state.albumTitle;
+      captionEl.textContent = current.caption || `${state.albumTitle} · Фото ${state.index + 1} из ${total}`;
+
+      updateActiveThumbnail();
+      updateNavAvailability();
+    };
+
+    const renderThumbnails = () => {
+      thumbnailsRoot.innerHTML = '';
+
+      state.items.forEach((item, idx) => {
+        const thumbButton = document.createElement('button');
+        thumbButton.type = 'button';
+        thumbButton.className = 'media-lightbox__thumb';
+        thumbButton.dataset.index = String(idx);
+        thumbButton.setAttribute('aria-label', item.caption ? `Показать: ${item.caption}` : `Фото ${idx + 1}`);
+
+        const thumbImage = document.createElement('img');
+        thumbImage.src = item.src;
+        thumbImage.alt = item.caption ? '' : `Фото ${idx + 1}`;
+        thumbImage.loading = 'lazy';
+
+        thumbButton.appendChild(thumbImage);
+        thumbnailsRoot.appendChild(thumbButton);
+      });
+
+      updateActiveThumbnail();
+    };
+
+    const handleKeyDown = (event) => {
+      if (!lightbox.classList.contains('media-lightbox--visible')) {
+        return;
+      }
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeLightbox();
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showSlide(state.index - 1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showSlide(state.index + 1);
+      }
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('media-lightbox--visible');
+      lightbox.setAttribute('aria-hidden', 'true');
+      body.classList.remove('media-lightbox-open');
+      document.removeEventListener('keydown', handleKeyDown);
+
+      if (state.focusReturnEl) {
+        state.focusReturnEl.focus();
+        state.focusReturnEl = null;
+      }
+    };
+
+    const openLightbox = (albumEl, startIndex = 0) => {
+      const slides = parseAlbumSlides(albumEl);
+      if (!slides.length) {
+        return;
+      }
+
+      state.items = slides;
+      state.index = 0;
+      state.albumId = albumEl.dataset.album || null;
+      state.albumTitle = getAlbumTitle(albumEl);
+      state.focusReturnEl = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+
+      renderThumbnails();
+      showSlide(startIndex);
+
+      lightbox.setAttribute('aria-hidden', 'false');
+      lightbox.setAttribute('aria-label', `Альбом: ${state.albumTitle}`);
+      lightbox.classList.add('media-lightbox--visible');
+      body.classList.add('media-lightbox-open');
+
+      document.addEventListener('keydown', handleKeyDown);
+
+      const closeButton = lightbox.querySelector('.media-lightbox__close');
+      if (closeButton) {
+        closeButton.focus();
+      }
+    };
+
+    prevBtn.addEventListener('click', () => {
+      showSlide(state.index - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      showSlide(state.index + 1);
+    });
+
+    thumbnailsRoot.addEventListener('click', (event) => {
+      const target = event.target.closest('.media-lightbox__thumb');
+      if (!target) {
+        return;
+      }
+      const idx = Number.parseInt(target.dataset.index || '-1', 10);
+      if (Number.isNaN(idx)) {
+        return;
+      }
+      showSlide(idx);
+    });
+
+    closeTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', closeLightbox);
+    });
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    albumCards.forEach((albumEl) => {
+      albumEl.addEventListener('click', (event) => {
+        const trigger = event.target.closest('.media-album__link');
+        if (!trigger) {
+          return;
+        }
+        event.preventDefault();
+        openLightbox(albumEl, 0);
+      });
+    });
+  };
+
+  initMediaAlbumLightbox();
+
   setupPlaceMapButtons();
   initCityMap();
 });
